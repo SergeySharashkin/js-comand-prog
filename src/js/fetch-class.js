@@ -6,18 +6,21 @@ const RELEVANT_GENRES_LIST = 'https://api.themoviedb.org/3/genre/movie/list';
 
 export class RenderClass {
   constructor() {
-    this.container = document.querySelector('.main__container');
+    this.container = document.querySelector('.film-list');
     this.input = document.querySelector('.header__input');
     this.homeLink = document.querySelector('.header__home-link');
     this.homeLogo = document.querySelector('.header__logo');
     this.myLibrary = document.querySelector('.header__my-library-link');
     this.watchedBtn = document.querySelector('.watched-btn');
     this.queueBtn = document.querySelector('.queue-btn');
-    // this.input.addEventListener('input', this.renderFilmsByQuery);
-    // this.homeLink.addEventListener('click', this.renderHomePage);
+    this.input.addEventListener('header__input', this.renderFilmsByQuery);
+    this.homeLink.addEventListener('click', e => {
+      e.preventDefault();
+      this.renderHomePage();
+    });
     this.homeLogo.addEventListener('click', e => {
       e.preventDefault();
-      this.renderHomePage;
+      this.renderHomePage();
     });
     this.relevantGenresList = [];
   }
@@ -54,7 +57,6 @@ export class RenderClass {
       console.log(error.message);
     }
   };
-
   renderFilmsMarkup = films => {
     const popularFilmsMarkup = films
       .map(({ original_title, poster_path, release_date, vote_average, genre_ids }) => {

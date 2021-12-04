@@ -7,6 +7,7 @@ const getRelevantGenresIds = async () => {
     const res = await axios.get(`${BASE_URL}${RELEVANT_GENRES_LIST}?api_key=${KEY}`);
     const relevantGenresObj = await res.data;
     relevantGenresList = relevantGenresObj.genres;
+    console.log(relevantGenresList);
     return relevantGenresList;
   } catch (error) {
     console.log(error.message);
@@ -17,12 +18,15 @@ const convertIdsToGenres = arrayOfIds => {
   let arrOfGenres = [];
   arrayOfIds.forEach(number => {
     const genre = relevantGenresList.filter(obj => obj.id === number);
+    genre[0].name ? arrOfGenres.push(genre[0].name) : arrOfGenres.push('Other');
+
     arrOfGenres.push(genre[0].name);
   });
   if (arrOfGenres.length >= 3) {
     arrOfGenres.splice(2, arrOfGenres.length - 2, 'Other');
   }
-  return arrOfGenres.join(', ');
+  const arrOfUniqGenres = new Set(arrOfGenres);
+  return [...arrOfUniqGenres].join(', ');
 };
 
 export { getRelevantGenresIds, convertIdsToGenres };

@@ -63,22 +63,20 @@ export class RenderClass {
         const data = new Date(release_date).getFullYear();
         return `<li class="film-list__item list-item">
         <a class="list-item__link" href="">
-          <div class="film-list__thumb">
-            <img
-              src="https://image.tmdb.org/t/p/w500${poster_path}"
-              alt=""
-              width="300px"
-              loading="lazy"
-            />
-          </div>
-          <div class="film-list__content">
-            <h3 class="film-list__item-title">${original_title}</h3>
-            <p class="film-list__item-text">
-              ${this.convertIdsToGenres(genre_ids)} &VerticalLine; ${data}
-            </p>
-          </div>
-        </a>
-      </li>      
+ feature/film-card-template
+        <div class="list-item__thumb">
+        <img class="list-item__img" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="" width="300px" loading="lazy"/>
+      </div>
+      <div class="list-item__content">
+        <h3 class="list-item__title">${original_title}</h3>
+        <p class="list-item__text">${this.replaceIdsWithGenres(
+          genre_ids,
+        )} &VerticalLine; ${data}</p>
+      </div>
+</a>
+
+      </li>
+
 `;
       })
       .join('');

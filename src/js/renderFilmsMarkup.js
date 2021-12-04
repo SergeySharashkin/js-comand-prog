@@ -1,5 +1,7 @@
-import convertIdsToGenres from './getGenres';
-export default renderFilmsMarkup = films => {
+import { convertIdsToGenres } from './getGenres';
+import { getRefs } from './getRefs';
+const refs = getRefs();
+export const renderFilmsMarkup = films => {
   const popularFilmsMarkup = films
     .map(({ original_title, poster_path, release_date, genre_ids }) => {
       const data = new Date(release_date).getFullYear();

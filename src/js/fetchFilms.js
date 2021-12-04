@@ -1,4 +1,6 @@
-import renderFilmsMarkup from './renderFilmsMarkup';
+import axios from 'axios';
+import { renderFilmsMarkup } from './renderFilmsMarkup';
+
 export const fetchFilms = async url => {
   try {
     const response = await axios.get(url);

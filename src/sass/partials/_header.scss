@@ -10,6 +10,14 @@
 .header__links-container {
   display: flex;
   align-items: baseline;
+  max-width: 320px;
+  //   background-color: green;
+    @media screen and (min-width: 768px) {
+      max-width: 768px;
+    }
+    @media screen and (min-width: 1024px) {
+      max-width: 1024px;
+  }
 }
 .header__links {
     display: flex;

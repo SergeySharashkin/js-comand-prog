@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { renderFilmsMarkup } from './renderFilmsMarkup';
-import { KEY, LANGUAGE } from './constants';
 
 export const fetchFilms = async (url, query) => {
   try {
@@ -8,7 +7,6 @@ export const fetchFilms = async (url, query) => {
       const response = await axios.get(`${url}&query=${query}`);
       const popularFilms = await response.data;
       const { results, total_pages } = popularFilms;
-      console.log(results);
       renderFilmsMarkup(results);
     } else {
       const response = await axios.get(url);

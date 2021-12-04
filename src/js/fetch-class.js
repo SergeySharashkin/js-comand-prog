@@ -35,7 +35,7 @@ export class RenderClass {
     }
   };
 
-  replaceIdsWithGenres = arrayOfIds => {
+  convertIdsToGenres = arrayOfIds => {
     let arrOfGenres = [];
     arrayOfIds.forEach(number => {
       const genre = this.relevantGenresList.filter(obj => obj.id === number);
@@ -61,20 +61,24 @@ export class RenderClass {
     const popularFilmsMarkup = films
       .map(({ original_title, poster_path, release_date, vote_average, genre_ids }) => {
         const data = new Date(release_date).getFullYear();
-        return `   <li class="film-list__item list-item">
+        return `<li class="film-list__item list-item">
         <a class="list-item__link" href="">
-        <div class="film-list__thumb">
-        <img src="https://image.tmdb.org/t/p/w500${poster_path}" alt="" width="300px" loading="lazy"/>
-      </div>
-      <div class="film-list__content">
-        <h3 class="film-list__item-title">${original_title}</h3>
-        <p class="film-list__item-text">${this.replaceIdsWithGenres(
-          genre_ids,
-        )} &VerticalLine; ${data}</p>
-      </div>
-</a>
-
-      </li>
+          <div class="film-list__thumb">
+            <img
+              src="https://image.tmdb.org/t/p/w500${poster_path}"
+              alt=""
+              width="300px"
+              loading="lazy"
+            />
+          </div>
+          <div class="film-list__content">
+            <h3 class="film-list__item-title">${original_title}</h3>
+            <p class="film-list__item-text">
+              ${this.convertIdsToGenres(genre_ids)} &VerticalLine; ${data}
+            </p>
+          </div>
+        </a>
+      </li>      
 `;
       })
       .join('');

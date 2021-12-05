@@ -3,7 +3,6 @@ import { fetchFilms } from './fetchFilms';
 import { getTrailerUrl } from './getTrailerUrl';
 import { refs } from './refs';
 import { KEY, BASE_URL, POPULAR_FILM_FETCH, SEARCH__MOVIE, LANGUAGE } from './constants';
-import { openModal } from './infoModal';
 // import { fetchExtendedInfo } from './fetchExtendInfo';
 getRelevantGenresIds();
 fetchFilms(`${BASE_URL}${POPULAR_FILM_FETCH}?api_key=${KEY}&language=${LANGUAGE}`);

@@ -12,7 +12,10 @@
 
 }
 .film-list__item:not(:last-child) {
-    margin-bottom: 20px;
+    @media screen and(max-width: 767px){
+        margin-bottom: 20px;
+
+    }
 }
 
 .film-list__item {
@@ -24,6 +27,9 @@
     @media screen and(min-width: 1024px) {
         flex-basis: calc((100% - 90px) / 3);
     }
+    @media screen and(min-width: 1440px) {
+        flex-basis: calc((100% - 120px) / 4);
+    }
         
 }
 
@@ -31,21 +37,45 @@
     display: block;
     text-decoration: none;
 
-    transform: scale(1);
-    transition: transform 500ms ease-out;
-
-    &:hover,
-    &:focus {
-        transform: scale(1.1);
-    }
-
+    
 }
 
 .list-item__thumb {
+    height: 440px;
     border-radius: 5px;
     overflow: hidden;
 }
 
+.list-item__img {
+    height: 100%;
+    
+    transform: scale(1);
+    transition: transform 500ms ease-out;
+    
+    &:hover,
+    &:focus {
+        transform: scale(1.1);
+    }
+}
+
 .list-item__content {
     padding-top: 10px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.17;
+    text-transform: uppercase;
+
+    color: $black-color;
+}
+
+.list-item__text {
+    
+    
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+    /* or 133% */
+
+
+    color: $orange-color;
 }

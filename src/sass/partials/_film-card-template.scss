@@ -30,7 +30,7 @@
     @media screen and(min-width: 1440px) {
         flex-basis: calc((100% - 120px) / 4);
     }
-        
+
 }
 
 .list-item__link {
@@ -41,23 +41,24 @@
     &:hover,
     &:focus {
         box-shadow:10px 10px 50px rgba(128, 128, 128, 0.719);
-        border-radius: 5px; 
+        border-radius: 5px;
     }
-   
+
 }
 
 .list-item__thumb {
     height: 400px;
     border-radius: 5px 5px 0 0;
     overflow: hidden;
+    background-image: url(../images/default_image.jpg);
 }
 
 .list-item__img {
     height: 100%;
-    
+
     transform: scale(1);
     transition: transform 500ms ease-out;
-    
+
     &:hover,
     &:focus {
         transform: scale(1.1);
@@ -78,8 +79,8 @@
 }
 
 .list-item__text {
-    
-    
+
+
     font-weight: 500;
     font-size: 12px;
     line-height: 1.33;

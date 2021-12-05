@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { renderFilmsMarkup } from './renderFilmsMarkup';
-
+let filmCardLink = null;
 export const fetchFilms = async (url, query) => {
   try {
-    if(query) {
+    if (query) {
       const response = await axios.get(`${url}&query=${query}`);
       const popularFilms = await response.data;
       const { results, total_pages } = popularFilms;
@@ -18,6 +18,5 @@ export const fetchFilms = async (url, query) => {
     console.log(error.message);
   }
 };
-
 
 // //query get movies from form

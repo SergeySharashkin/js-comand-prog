@@ -1,29 +1,36 @@
-<header class='header'>
-<div class="wrapper">
-  <div class='header__links-container'>
-    <a href='#' class='header__logo'>
-      <svg class='logo__image' width='24' height='24'>
-        <use href='../src/images/icons.svg#icon-film'></use>
-      </svg>
-      <span class='logo__text'>Filmoteka</span></a>
-    <ul class='header__links'>
-      <li>
-        <a href='#' class='header__home-link'>Home</a>
-      </li>
-      <li>
-        <a href='#' class='header__my-library-link'>My library</a>
-      </li>
-    </ul>
-  </div>
-  <form action='' class='header__form'>
-    <label class='header__input-label'>
-      <input type='text' class='header__input' name='search' placeholder='Поиск фильмов' />
-    </label>
-    <button type='submit' class='search-btn'>
-      <svg width='12' height='12'>
-        <use href='../src/images/icons.svg#icon-search'></use>
-      </svg>
-    </button>
-  </form>
+<header class="header header--my-library">
+  <div class="wrapper">
+    <div class="header__links-container">
+      <a href="#" class="header__logo">
+        <svg class="logo__image" width="24" height="24">
+          <use href="../src/images/icons.svg#icon-film"></use>
+        </svg>
+        <span class="logo__text">Filmoteka</span></a
+      >
+      <ul class="header__links">
+        <li>
+          <a href="#" class="header__home-link header__link--active">Home</a>
+        </li>
+        <li>
+          <a href="#" class="header__my-library-link">My library</a>
+        </li>
+      </ul>
+    </div>
+    <form action="" class="header__form">
+      <label class="header__input-label" for="search"></label>
+      <div class="header__input-thumb">
+        <input type="text" class="header__input" name="search" placeholder="Поиск фильмов" />
+
+        <button type="submit" class="search-btn">
+          <svg width="12" height="12">
+            <use href="../src/images/icons.svg#icon-search"></use>
+          </svg>
+        </button>
+      </div>
+    </form>
+    <div class="header__button-container">
+      <button class="header__button">Watched</button>
+      <button class="header__button">Queue</button>
+    </div>
   </div>
 </header>

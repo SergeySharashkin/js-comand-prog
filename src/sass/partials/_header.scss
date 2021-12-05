@@ -1,6 +1,7 @@
 .header {
-  height: 230px;
-  max-width: 320px;
+  margin: 0 auto;
+  // height: 230px;
+  // max-width: 320px;
   padding: 46px 20px 0 20px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
     url('../images/header-image-home.jpg');
@@ -10,6 +11,14 @@
 .header__links-container {
   display: flex;
   align-items: baseline;
+  // max-width: 320px;
+  // //   background-color: green;
+  //   @media screen and (min-width: 768px) {
+  //     max-width: 768px;
+  //   }
+  //   @media screen and (min-width: 1024px) {
+  //     max-width: 1024px;
+  // }
 }
 .header__links {
     display: flex;
@@ -34,6 +43,9 @@ color: #FFFFFF;
 }
 .logo__text {
   display: none;
+  @media screen and (min-width:768px) {
+    display: flex;
+  }
 }
 .header__input-label {
     position: relative;
@@ -54,6 +66,11 @@ color: #FFFFFF;
 }
 .header__input::placeholder {
     color: #FFFFFF;
+    font-size: 16px;
+    font-family: $font;
+    @media screen and (min-width:768px) {
+      font-size: 14px;
+    }
 }
 .search-btn {
     position: absolute;

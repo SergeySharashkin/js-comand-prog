@@ -9,8 +9,8 @@ html {
   }
   
   body {
-    color: $primary-text-color;
-    font-family: $primary-font;
+    color: $black-color;
+    font-family: $font;
     letter-spacing: 0.03em;
   }
   h1,
@@ -28,6 +28,12 @@ html {
     max-width: 100%;
     height: auto;
   }
+  ul, ol {
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+  }
 
   .visually-hidden {
     position: absolute;
@@ -38,4 +44,23 @@ html {
     overflow: hidden;
     border: 0;
     clip: rect(0 0 0 0);
+  }
+  .wrapper {
+    margin: 0 auto;
+    padding: 0 20px;
+    min-width: 320px;
+    max-width: 480px;
+    //   background-color: green;
+    @media screen and (min-width: 768px) {
+      padding: 0 75px;
+      max-width: 768px;
+    }
+    @media screen and (min-width: 1024px) {
+      padding: 0 71px;
+      max-width: 1024px;
+    }
+    @media screen and (min-width: 1440px) {
+      padding: 0 71px;
+      max-width: 1440px;
+    }
   }

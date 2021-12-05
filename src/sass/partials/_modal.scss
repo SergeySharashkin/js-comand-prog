@@ -47,3 +47,29 @@
   cursor: pointer;
 
 }
+.modal__table-wrap {
+  margin-bottom: 21px;
+}
+.add-btn {
+  display: flexbox;
+
+font-size: 12px;
+
+line-height: 1.33;
+width: 112px;
+height: 44px;
+border-radius: 5px;
+padding: 0;
+margin-right: 15px;
+background-color: $orange-color;
+&:last-child {
+  margin-right: 0px;
+  background-color: $white-color;
+}
+@media screen and (min-width: 768px) {
+  width: 125px;
+}
+@media screen and (min-width: 1024px) {
+  width: 136px;
+}
+}

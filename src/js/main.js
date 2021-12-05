@@ -26,7 +26,7 @@ refs.container.addEventListener('click', e => {
     return;
   }
   const filmId = e.target.dataset.id;
-  getTrailerUrl(filmId);
+  // getTrailerUrl(filmId);
   openModal();
 });
 // refs.trailerBtn.addEventListener('click', onTrailerBtnClick);

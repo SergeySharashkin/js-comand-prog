@@ -15,14 +15,14 @@ export const renderFilmsMarkup = films => {
         vote_average,
         vote_count,
       }) => {
-        let imageSrc = 'default-image.jpg';
+        let imageSrc = coverImage;
         if (poster_path) {
           imageSrc = `https://image.tmdb.org/t/p/w500${poster_path}`;
         }
         const data = new Date(release_date).getFullYear();
         return `<li class="film-list__item list-item">
         <a class="list-item__link" href="#" >
-          <div class="film-list__thumb">
+          <div class="list-item__thumb">
             <img
               class="list-item__img"
               src="${imageSrc}"

@@ -1,10 +1,11 @@
+import coverImage from '../images/default_image.jpg';
 import { convertIdsToGenres } from './getGenres';
 import { getRefs } from './getRefs';
 const refs = getRefs();
 export const renderFilmsMarkup = films => {
   const popularFilmsMarkup = films
     .map(({ title, poster_path, release_date, genre_ids }) => {
-      let imageSrc = 'default-image.jpg';
+      let imageSrc = coverImage;
         if(poster_path) {
           imageSrc = `https://image.tmdb.org/t/p/w500${poster_path}`;
         }

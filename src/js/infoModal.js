@@ -1,6 +1,6 @@
 import { refs } from './refs';
 // refModalLink.addEventListener('click', openModal);
-
+let currentId = 0;
 export function openModal(e) {
   // e.preventDefault()
   const modalName = refs.modalLink.getAttribute('data-info-modal');
@@ -20,6 +20,7 @@ export function openModal(e) {
     originalTitle: e.target.dataset.originalTitle,
     genres: e.target.dataset.genres,
   };
+  currentId = data.id;
   console.log(data.url);
   const infoModalContent = `     <div class="modal__card-img">
     <img src="${data.url}" alt="${data.title}" width="200px" class="modal__img" />
@@ -64,3 +65,47 @@ refs.modalOverlay.addEventListener('click', function () {
 });
 
 function renderModal() {}
+
+let sevedFilms = [];
+let wachedFilms = [];
+// let targetID = e.target.dataset.id;
+refs.addWatched.addEventListener('click', e => {
+  // const currentId = e.target.dataset.id;
+  // console.log(currentId);
+  if (!wachedFilms.includes(currentId)) {
+    wachedFilms.push(currentId);
+    return console.log('watched add', wachedFilms);;
+  }
+  const index = wachedFilms.indexOf(currentId);
+  wachedFilms.splice(index, 1);
+  return console.log('watched remove', wachedFilms);
+});
+refs.addQueue.addEventListener('click', e => {
+  if (!sevedFilms.includes(currentId)) {
+    sevedFilms.push(currentId);
+    return console.log('seved add', sevedFilms);;
+  }
+  const index = sevedFilms.indexOf(currentId);
+  sevedFilms.splice(index, 1);
+  return console.log('seved remove', sevedFilms);
+});
+
+// function addInQueue(id) {
+//   if (!sevedFilms.includes(id)) {
+//     sevedFilms.push(id);
+//     return;
+//   }
+//   index = sevedFilms.indexOf(id);
+//   sevedFilms.splice(index, 1)
+//   return
+// }
+// function addInWatched(id) {
+//   if (!wachedFilms.includes(id)) {
+//     return wachedFilms.push(id);
+//   }
+//   index = wachedFilms.indexOf(id);
+//   wachedFilms.splice(index, 1)
+//   return
+// }
+console.log('seved', sevedFilms);
+console.log('watched', wachedFilms);

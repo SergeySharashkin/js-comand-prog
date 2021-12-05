@@ -7,5 +7,10 @@ export const refs = {
   myLibrary: document.querySelector('.header__my-library-link'),
   watchedBtn: document.querySelector('.watched-btn'),
   queueBtn: document.querySelector('.queue-btn'),
+  modalOpen: document.querySelector('.js-modal-open'),
+  modalClose: document.querySelector('.js-modal-close'),
+  modalOverlay: document.querySelector('.js-modal-overlay'),
   filmCardLink: null,
 };
+
+

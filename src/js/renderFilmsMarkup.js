@@ -6,7 +6,9 @@ export const renderFilmsMarkup = films => {
     .map(
       ({
         title,
+        original_title,
         poster_path,
+        backdrop_path,
         release_date,
         genre_ids,
         id,
@@ -19,7 +21,7 @@ export const renderFilmsMarkup = films => {
         if (poster_path) {
           imageSrc = `https://image.tmdb.org/t/p/w500${poster_path}`;
         }
-        const data = new Date(release_date).getFullYear();
+        const date = new Date(release_date).getFullYear();
         return `<li class="film-list__item list-item">
         <a class="list-item__link" href="#" >
           <div class="list-item__thumb">
@@ -28,10 +30,13 @@ export const renderFilmsMarkup = films => {
               src="${imageSrc}"
               alt="${title}"
               data-id="${id}"
+              data-url="https://image.tmdb.org/t/p/w500${backdrop_path}"
+              data-originalTitle="${original_title}"
               data-overview="${overview}"
               data-popularity="${popularity}"
               data-rating="${vote_average}"
               data-count="${vote_count}"
+              data-genres="${convertIdsToGenres(genre_ids)}"
               width="300px"
               loading="lazy"
             />
@@ -39,7 +44,7 @@ export const renderFilmsMarkup = films => {
           <div class="list-item__content">
             <h3 class="list-item__title">${title}</h3>
             <p class="list-item__text">
-              ${convertIdsToGenres(genre_ids)} &VerticalLine; ${data}
+              ${convertIdsToGenres(genre_ids)} &VerticalLine; ${date}
             </p>
           </div>
         </a>

@@ -13,14 +13,14 @@ export const fetchFilms = async (url, query) => {
       const { results, total_pages, page } = popularFilms;
       let totalPages = total_pages;
       renderFilmsMarkup(results);
-      pagination({totalPages, page, currentPage: 'main'})
+      pagination({totalPages, page, currentPage: 'main'});
     } else {
       const response = await axios.get(url);
       const popularFilms = await response.data;
       const { results, total_pages , page} = popularFilms;
       let totalPages = total_pages;
       renderFilmsMarkup(results);
-      pagination({totalPages, page, currentPage: 'main'})
+      pagination({totalPages, page, currentPage: 'main'});
     }
   } catch (error) {
     console.log(error.message);

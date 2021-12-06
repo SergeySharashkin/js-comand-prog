@@ -9,11 +9,13 @@ getRelevantGenresIds();
 fetchFilms(`${BASE_URL}${POPULAR_FILM_FETCH}?api_key=${KEY}&page=${page}&language=${LANGUAGE}`);
 refs.homeLink.addEventListener('click', e => {
   e.preventDefault();
-  fetchFilms(`${BASE_URL}${POPULAR_FILM_FETCH}?api_key=${KEY}&page=${page}&language=${LANGUAGE}`);
+  sessionStorage.removeItem('mainPage');
+  fetchFilms(`${BASE_URL}${POPULAR_FILM_FETCH}?api_key=${KEY}&language=${LANGUAGE}`);
 });
 refs.homeLogo.addEventListener('click', e => {
   e.preventDefault();
-  fetchFilms(`${BASE_URL}${POPULAR_FILM_FETCH}?api_key=${KEY}&page=${page}&language=${LANGUAGE}`);
+  sessionStorage.removeItem('mainPage');
+  fetchFilms(`${BASE_URL}${POPULAR_FILM_FETCH}?api_key=${KEY}&language=${LANGUAGE}`);
 });
 refs.form.addEventListener('submit', e => {
   e.preventDefault();

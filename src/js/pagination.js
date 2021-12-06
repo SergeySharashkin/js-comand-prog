@@ -20,6 +20,8 @@ export function pagination({ totalPages, query, currentPage, page }) {
     if (currentPage === 'main') {
       sessionStorage.setItem('mainPage', eventData.page);
       fetchFilms(`${BASE_URL}${POPULAR_FILM_FETCH}?api_key=${KEY}&page=${eventData.page}&language=${LANGUAGE}`);
+    } else if (currentPage === 'resultFetch') {
+      fetchFilms(`${BASE_URL}${POPULAR_FILM_FETCH}?api_key=${KEY}&page=${eventData.page}&language=${LANGUAGE}`);
     }
   });
 }

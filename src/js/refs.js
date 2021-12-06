@@ -10,11 +10,9 @@ export const refs = {
   modalLink: document.querySelector('.js-info-modal-open'),
   modalClose: document.querySelector('.js-info-modal-close'),
   modalOverlay: document.querySelector('.js-info-modal-overlay'),
-  addWatched: document.querySelector('#add-watched'),
-  addQueue: document.querySelector('#add-queue'),
 
-  watchedBtn: document.querySelector('.watched-btn'),
-  queueBtn: document.querySelector('.queue-btn'),
+  watchedBtn: document.querySelector('#add-watched'),
+  queueBtn: document.querySelector('#add-queue'),
 
   trailerBackdrop: document.querySelector('[data-trailer-modal]'),
   trailerModal: document.querySelector('.trailer-modal'),

@@ -55,7 +55,9 @@
   justify-content: center;
 }
 .add-btn {
-  display: flexbox;
+  display: flex;
+  align-items: center;
+    justify-content: center;
 
   font-size: 12px;
   text-transform: uppercase;
@@ -67,22 +69,33 @@
   margin-right: 15px;
   background-color: $orange-color;
   border: none;
-  &:last-child {
-    margin-right: 0px;
+  transition: box-shadow 250ms cubic-bezier(.17,.67,.83,.67);
+  
+  &.queue-btn {
+    margin-right: 15px;
     background-color: $white-color;
     border: 1px solid $black-color;
+    margin: 0;
   }
-  &:hover,
-  &:focus {
+  &.trailer-btn {
+    margin: 15px auto 0 auto;
+    background-color: $black-color;
+    color: $white-color;
+    border: 1px solid $black-color;
+    
+  }
+  &:hover, :focus {
     box-shadow: 0px 0px 10px 5px rgba(247, 133, 4, 0.5);
   }
   @media screen and (min-width: 768px) {
     width: 125px;
   }
   @media screen and (min-width: 1024px) {
+    padding: 0 15px;
     width: 136px;
   }
   @media screen and (max-width: 480px) {
-    padding: 0 10px;
+    padding: 0 15px;
+    
   }
 }

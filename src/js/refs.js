@@ -7,5 +7,8 @@ export const refs = {
   myLibrary: document.querySelector('.header__my-library-link'),
   watchedBtn: document.querySelector('.watched-btn'),
   queueBtn: document.querySelector('.queue-btn'),
+  headerBtnContainer: document.querySelector('.header__button-container'),
+  header: document.querySelector('.header'),
+
   filmCardLink: null,
 };

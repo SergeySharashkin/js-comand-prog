@@ -3,6 +3,8 @@ import { fetchFilms } from './fetchFilms';
 import { getTrailerUrl } from './getTrailerUrl';
 import { refs } from './refs';
 import { KEY, BASE_URL, POPULAR_FILM_FETCH, SEARCH__MOVIE, LANGUAGE } from './constants';
+import onMyLibraryClick from './header'
+import onHomeClick from './header'
 // import { fetchExtendedInfo } from './fetchExtendInfo';
 getRelevantGenresIds();
 fetchFilms(`${BASE_URL}${POPULAR_FILM_FETCH}?api_key=${KEY}&language=${LANGUAGE}`);
@@ -27,4 +29,6 @@ refs.container.addEventListener('click', e => {
   const filmId = e.target.dataset.id;
   getTrailerUrl(filmId);
 });
+refs.myLibrary.addEventListener('click', onMyLibraryClick);
+refs.homeLink.addEventListener('click', onHomeClick);
 // refs.trailerBtn.addEventListener('click', onTrailerBtnClick);

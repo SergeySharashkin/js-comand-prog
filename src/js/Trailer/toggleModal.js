@@ -1,3 +1,3 @@
 export function toggleModal(backdrop) {
-  backdrop.classList.toggle('is-hidden');
+  backdrop.classList.toggle('visually-hidden');
 }

@@ -20,9 +20,9 @@ export const renderFilmsMarkup = films => {
         if (poster_path) {
           imageSrc = `https://image.tmdb.org/t/p/w500${poster_path}`;
         }
-        // if (!original_title) {
-        //   original_title = '---';
-        // }
+        if (!original_title) {
+          original_title = '---';
+        }
         const date = new Date(release_date).getFullYear();
         return `<li class="film-list__item list-item">
         <a class="list-item__link" href="#" >

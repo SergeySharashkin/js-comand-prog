@@ -1,66 +1,69 @@
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 
-  }
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-  }
-  
-  body {
-    color: $black-color;
-    font-family: $font;
-    letter-spacing: 0.03em;
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p {
-    margin: 0;
-    padding: 0;
-  }
-  img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-  }
-  ul, ol {
-    list-style: none;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-left: 0;
-  }
+body {
+  color: $black-color;
+  font-family: $font;
+  letter-spacing: 0.03em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+ul,
+ol {
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+button {
+  cursor: pointer;
+}
 
-  .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    border: 0;
-    clip: rect(0 0 0 0);
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+.wrapper {
+  margin: 0 auto;
+  padding: 0 20px;
+  min-width: 320px;
+  max-width: 480px;
+  //   background-color: green;
+  @media screen and (min-width: 768px) {
+    padding: 0 75px;
+    max-width: 768px;
   }
-  .wrapper {
-    margin: 0 auto;
-    padding: 0 20px;
-    min-width: 320px;
-    max-width: 480px;
-    //   background-color: green;
-    @media screen and (min-width: 768px) {
-      padding: 0 75px;
-      max-width: 768px;
-    }
-    @media screen and (min-width: 1024px) {
-      padding: 0 71px;
-      max-width: 1024px;
-    }
-    @media screen and (min-width: 1440px) {
-      padding: 0 71px;
-      max-width: 1440px;
-    }
+  @media screen and (min-width: 1024px) {
+    padding: 0 71px;
+    max-width: 1024px;
   }
+  @media screen and (min-width: 1440px) {
+    padding: 0 71px;
+    max-width: 1440px;
+  }
+}

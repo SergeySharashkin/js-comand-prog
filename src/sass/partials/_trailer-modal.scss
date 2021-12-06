@@ -1,4 +1,4 @@
-.backdrop {
+.trailer__backdrop {
   z-index: 101;
   position: fixed;
   top: 0;
@@ -7,19 +7,9 @@
   height: 100%;
   transform: scale(1, 1);
   background-color: rgba(0, 0, 0, 0.2);
-  transition: background-color var(--modal-tr-param), transform var(--modal-tr-param),
-    border-radius var(--modal-tr-param), visibility var(--modal-tr-param),
-    opacity var(--modal-tr-param);
-}
-.backdrop.is-hidden {
-  visibility: hidden;
-  opacity: 0;
-  transform: scale(0, 0);
-  border-radius: 50%;
-  pointer-events: none;
 }
 
-.trailer-modal {
+.trailer__modal {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -37,9 +27,4 @@
   @media screen and (min-width: 1200px) {
     max-width: 530px;
   }
-}
-
-.trailer__thumb {
-  width: 100%;
-  height: 100%;
 }

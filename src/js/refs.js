@@ -6,7 +6,7 @@ export const refs = {
   myLibrary: document.querySelector('.header__my-library-link'),
   homeLink: document.querySelector('.header__home-link'),
   homeLogo: document.querySelector('.header__logo'),
- 
+
   modalLink: document.querySelector('.js-info-modal-open'),
   modalClose: document.querySelector('.js-info-modal-close'),
   modalOverlay: document.querySelector('.js-info-modal-overlay'),
@@ -24,6 +24,9 @@ export const refs = {
 
   headerBtnContainer: document.querySelector('.header__button-container'),
   header: document.querySelector('.header'),
+
+  //pagination container
+  tuiContainer: document.getElementById('tui-pagination-container'),
 
   filmCardLink: null,
 };

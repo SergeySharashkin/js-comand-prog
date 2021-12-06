@@ -7,7 +7,6 @@ const getRelevantGenresIds = async () => {
     const res = await axios.get(`${BASE_URL}${RELEVANT_GENRES_LIST}?api_key=${KEY}`);
     const relevantGenresObj = await res.data;
     relevantGenresList = relevantGenresObj.genres;
-    console.log(relevantGenresList);
     return relevantGenresList;
   } catch (error) {
     console.log(error.message);

@@ -13,5 +13,10 @@ export const refs = {
 
   watchedBtn: document.querySelector('.watched-btn'),
   queueBtn: document.querySelector('.queue-btn'),
+
+  trailerBackdrop: document.querySelector('[data-trailer-modal]'),
+  trailerModal: document.querySelector('.trailer-modal'),
+  openTrailerBtn: document.querySelector('.trailer-btn'),
+  closeTrailerBtn: document.querySelector('.close-trailer-btn'),
   filmCardLink: null,
 };

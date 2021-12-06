@@ -1,12 +1,11 @@
 import { getRelevantGenresIds } from './getGenres';
 import { fetchFilms } from './fetchFilms';
-import { getTrailerUrl } from './getTrailerUrl';
 import { refs } from './refs';
 import { KEY, BASE_URL, POPULAR_FILM_FETCH, SEARCH__MOVIE, LANGUAGE } from './constants';
+import { openInfoModal } from './openInfoModal';
+import { createTrailer } from './Trailer/onTrailerBtnClick';
+import { onMyLibraryClick, onHomeClick } from './header';
 
-import { onMyLibraryClick, onHomeClick } from './header'
-import { openModal } from './infoModal';
-// import { fetchExtendedInfo } from './fetchExtendInfo';
 getRelevantGenresIds();
 fetchFilms(`${BASE_URL}${POPULAR_FILM_FETCH}?api_key=${KEY}&language=${LANGUAGE}`);
 refs.homeLink.addEventListener('click', e => {
@@ -28,9 +27,9 @@ refs.container.addEventListener('click', e => {
     return;
   }
   const filmId = e.target.dataset.id;
-  // getTrailerUrl(filmId);
-  openModal(e);
+  openInfoModal(e);
 });
+
 refs.myLibrary.addEventListener('click', onMyLibraryClick);
 refs.homeLink.addEventListener('click', onHomeClick);
-// refs.trailerBtn.addEventListener('click', onTrailerBtnClick);
+

@@ -45,6 +45,8 @@
   height: 20px;
   cursor: pointer;
 }
+.modal-wrapper {
+}
 .modal__table-wrap {
   margin-bottom: 21px;
 }
@@ -81,6 +83,6 @@
     width: 136px;
   }
   @media screen and (max-width: 480px) {
-    padding: 0 10px
+    padding: 0 10px;
   }
 }

@@ -7,7 +7,6 @@ function onTrailerBtnClick(e) {
   toggleModal(refs.trailerBackdrop);
   const filmUrl = e.currentTarget.dataset.key;
   console.log(filmUrl);
-  // getTrailerUrl(filmId);
   renderTrailerModal(filmUrl);
 }
 refs.closeTrailerBtn.addEventListener('click', () => {

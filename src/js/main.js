@@ -3,6 +3,8 @@ import { fetchFilms } from './fetchFilms';
 import { getTrailerUrl } from './getTrailerUrl';
 import { refs } from './refs';
 import { KEY, BASE_URL, POPULAR_FILM_FETCH, SEARCH__MOVIE, LANGUAGE } from './constants';
+
+import { onMyLibraryClick, onHomeClick } from './header'
 import { openModal } from './infoModal';
 // import { fetchExtendedInfo } from './fetchExtendInfo';
 getRelevantGenresIds();
@@ -29,4 +31,6 @@ refs.container.addEventListener('click', e => {
   // getTrailerUrl(filmId);
   openModal(e);
 });
+refs.myLibrary.addEventListener('click', onMyLibraryClick);
+refs.homeLink.addEventListener('click', onHomeClick);
 // refs.trailerBtn.addEventListener('click', onTrailerBtnClick);

@@ -15,5 +15,8 @@ export const refs = {
 
   watchedBtn: document.querySelector('.watched-btn'),
   queueBtn: document.querySelector('.queue-btn'),
+  headerBtnContainer: document.querySelector('.header__button-container'),
+  header: document.querySelector('.header'),
+
   filmCardLink: null,
 };

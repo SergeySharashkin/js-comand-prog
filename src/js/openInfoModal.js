@@ -96,27 +96,6 @@ refs.addQueue.addEventListener('click', e => {
   return console.log('saved remove', savedFilms);
 });
 
-// function addInQueue(id) {
-//   if (!savedFilms.includes(id)) {
-//     savedFilms.push(id);
-//     return;
-//   }
-//   index = savedFilms.indexOf(id);
-//   savedFilms.splice(index, 1)
-//   return
-// }
-// function addInWatched(id) {
-//   if (!watchedFilms.includes(id)) {
-//     return watchedFilms.push(id);
-//   }
-//   index = watchedFilms.indexOf(id);
-//   watchedFilms.splice(index, 1)
-//   return
-// }
-console.log('saved', savedFilms);
-console.log('watched', watchedFilms);
-let savedFilms = [];
-let watchedFilms = [];
 // let targetID = e.target.dataset.id;
 refs.watchedBtn.addEventListener('click', e => {
   // const currentId = e.target.dataset.id;

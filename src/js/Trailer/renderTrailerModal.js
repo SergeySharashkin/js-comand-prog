@@ -1,4 +1,4 @@
-import { refs } from './refs';
+import { refs } from '../refs';
 
 export function renderTrailerModal(key) {
   const trailerUrl = `https://www.youtube.com/embed/${key}?autoplay=1&enablejsapi=1&rel=0&modestbranding=1&`;
@@ -11,5 +11,5 @@ export function renderTrailerModal(key) {
       allowfullscreen
       allow="autoplay; encrypted-media"
     ></iframe>`;
-  refs.container.insertAdjacentHTML('afterbegin', video);
+  refs.trailerThumb.innerHTML = video;
 }

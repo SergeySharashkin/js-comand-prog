@@ -10,6 +10,8 @@ export const refs = {
   modalLink: document.querySelector('.js-info-modal-open'),
   modalClose: document.querySelector('.js-info-modal-close'),
   modalOverlay: document.querySelector('.js-info-modal-overlay'),
+  addWatched: document.querySelector('#add-watched'),
+  addQueue: document.querySelector('#add-queue'),
 
   watchedBtn: document.querySelector('.watched-btn'),
   queueBtn: document.querySelector('.queue-btn'),

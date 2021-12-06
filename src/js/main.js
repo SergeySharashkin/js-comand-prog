@@ -1,6 +1,6 @@
 import { getRelevantGenresIds } from './getGenres';
 import { fetchFilms } from './fetchFilms';
-import { getTrailerUrl } from './getTrailerUrl';
+import { getTrailerUrl } from './Trailer/getTrailerUrl';
 import { refs } from './refs';
 import { KEY, BASE_URL, POPULAR_FILM_FETCH, SEARCH__MOVIE, LANGUAGE } from './constants';
 import { openModal } from './infoModal';

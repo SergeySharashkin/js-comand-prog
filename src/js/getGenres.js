@@ -18,14 +18,14 @@ const convertIdsToGenres = arrayOfIds => {
   let arrOfGenres = [];
   arrayOfIds.forEach(number => {
     const genre = relevantGenresList.filter(obj => obj.id === number);
-    // genre[0].name ? arrOfGenres.push(genre[0].name) : arrOfGenres.push('Other');
-
+    if (!genre[0]) {
+      return arrOfGenres.push('Other');
+    }
     arrOfGenres.push(genre[0].name);
   });
   if (arrOfGenres.length >= 3) {
     arrOfGenres.splice(2, arrOfGenres.length - 2, 'Other');
   }
-  // const arrOfUniqGenres = new Set(arrOfGenres);
   return arrOfGenres.join(', ');
 };
 

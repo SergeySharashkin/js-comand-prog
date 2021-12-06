@@ -21,6 +21,9 @@ export const renderFilmsMarkup = films => {
         if (poster_path) {
           imageSrc = `https://image.tmdb.org/t/p/w500${poster_path}`;
         }
+        if (!original_title) {
+          original_title = '---';
+        }
         const date = new Date(release_date).getFullYear();
         return `<li class="film-list__item list-item">
         <a class="list-item__link" href="#" >
@@ -30,7 +33,7 @@ export const renderFilmsMarkup = films => {
               src="${imageSrc}"
               alt="${title}"
               data-id="${id}"
-              data-url="https://image.tmdb.org/t/p/w500${backdrop_path}"
+              data-url="https://image.tmdb.org/t/p/w500${poster_path}"
               data-originalTitle="${original_title}"
               data-overview="${overview}"
               data-popularity="${popularity}"

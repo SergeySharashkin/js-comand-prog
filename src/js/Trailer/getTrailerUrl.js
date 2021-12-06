@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { BASE_URL, KEY, LANGUAGE } from '../constants';
-// import { renderTrailerModal } from './renderTrailerModal';
 import { refs } from '../refs';
 
 export const getTrailerUrl = async id => {
@@ -10,11 +9,9 @@ export const getTrailerUrl = async id => {
     );
     const extendedInfo = await response.data;
     const { results } = extendedInfo;
-    const partOfUrl = results[0].key;
-    partOfUrl
-      ? refs.openTrailerBtn.setAttribute('data-url', `${partOfUrl}`)
+    results[0]
+      ? refs.openTrailerBtn.setAttribute('data-key', `${results[0].key}`)
       : refs.openTrailerBtn.classList.add('visually-hidden');
-    refs.openTrailerBtn.setAttribute('data-key', `${partOfUrl}`);
   } catch (error) {
     console.log(error.message);
   }

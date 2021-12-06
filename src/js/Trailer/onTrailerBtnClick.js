@@ -5,7 +5,7 @@ import { toggleModal } from './toggleModal';
 refs.openTrailerBtn.addEventListener('click', onTrailerBtnClick);
 function onTrailerBtnClick(e) {
   toggleModal(refs.trailerBackdrop);
-  const filmUrl = e.currentTarget.dataset.url;
+  const filmUrl = e.currentTarget.dataset.key;
   console.log(filmUrl);
   // getTrailerUrl(filmId);
   renderTrailerModal(filmUrl);

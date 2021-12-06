@@ -16,6 +16,7 @@ export const refs = {
 
   trailerBackdrop: document.querySelector('[data-trailer-modal]'),
   trailerModal: document.querySelector('.trailer-modal'),
+  trailerThumb: document.querySelector('.trailer__thumb'),
   openTrailerBtn: document.querySelector('.trailer-btn'),
   closeTrailerBtn: document.querySelector('.close-trailer-btn'),
   filmCardLink: null,

@@ -17,10 +17,11 @@ export function openInfoModal(e) {
     overview: e.target.dataset.overview,
     rating: e.target.dataset.rating,
     votes: e.target.dataset.count,
-    originalTitle: e.target.dataset.originalTitle,
+    original: e.target.dataset.original,
     genres: e.target.dataset.genres,
   };
-  const { popularity, url, title, id, overview, rating, votes, originalTitle, genres } = data;
+  console.log(e.target.dataset.original);
+  const { popularity, url, title, id, overview, rating, votes, original, genres } = data;
   const infoModalContent = `     <div class="modal__card-img">
     <img src="${url}" alt="${title}" width="200px" class="modal__img" />
   </div>
@@ -40,7 +41,7 @@ export function openInfoModal(e) {
         </tr>
         <tr>
           <th>Original Title</th>
-          <td>${originalTitle}</td>
+          <td>${original}</td>
         </tr>
         <tr>
         

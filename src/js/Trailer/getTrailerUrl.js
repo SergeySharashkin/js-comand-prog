@@ -14,7 +14,7 @@ export const getTrailerUrl = async id => {
     partOfUrl
       ? refs.openTrailerBtn.setAttribute('data-url', `${partOfUrl}`)
       : refs.openTrailerBtn.classList.add('visually-hidden');
-    // renderTrailerModal(partOfUrl);
+    refs.openTrailerBtn.setAttribute('data-key', `${partOfUrl}`);
   } catch (error) {
     console.log(error.message);
   }

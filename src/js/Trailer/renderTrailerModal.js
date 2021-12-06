@@ -6,11 +6,11 @@ export function renderTrailerModal(key) {
       id="player"
       title="YouTube video player"
       src="${trailerUrl}"
-      width="640"
-      height="360"
+      width="450px"
+      height="400px"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
     ></iframe>`;
-  refs.trailerModal.insertAdjacentHTML('beforeend', video);
+  refs.trailerThumb.innerHTML = video;
   console.log(video);
 }

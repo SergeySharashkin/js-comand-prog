@@ -39,3 +39,17 @@ refs.container.addEventListener('click', e => {
 
 refs.myLibrary.addEventListener('click', onMyLibraryClick);
 refs.homeLink.addEventListener('click', onHomeClick);
+refs.showWatchedBtn.addEventListener('click', e => {
+  if (!refs.showWatchedBtn.classList.contains('header__button--active')) {
+    refs.showWatchedBtn.classList.add('header__button--active');
+    refs.showQueueBtn.classList.remove('header__button--active');
+    // Серёга, добавляй свою функцию после этой строчки :)
+  }
+});
+refs.showQueueBtn.addEventListener('click', e => {
+  if (refs.showWatchedBtn.classList.contains('header__button--active')) {
+    refs.showWatchedBtn.classList.remove('header__button--active');
+    refs.showQueueBtn.classList.add('header__button--active');
+    // Серёга, добавляй свою функцию после этой строчки :)
+  }
+});

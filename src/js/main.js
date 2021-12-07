@@ -29,7 +29,9 @@ refs.container.addEventListener('click', e => {
     return;
   }
   const filmId = e.target.dataset.id;
-  openInfoModal(e);
+  setTimeout(() => {
+    openInfoModal(e);
+  }, 0);
 });
 
 refs.myLibrary.addEventListener('click', onMyLibraryClick);

@@ -9,9 +9,12 @@ export const getTrailerUrl = async id => {
     );
     const extendedInfo = await response.data;
     const { results } = extendedInfo;
-    results[0]
-      ? refs.openTrailerBtn.setAttribute('data-key', `${results[0].key}`)
-      : refs.openTrailerBtn.classList.add('visually-hidden');
+    if (!results[0]) {
+      refs.openTrailerBtn.classList.add('visually-hidden');
+      return;
+    }
+    refs.openTrailerBtn.setAttribute('data-key', `${results[0].key}`);
+    refs.openTrailerBtn.classList.remove('visually-hidden');
   } catch (error) {
     console.log(error.message);
   }

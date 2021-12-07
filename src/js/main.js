@@ -4,6 +4,7 @@ import { refs } from './refs';
 import { KEY, BASE_URL, POPULAR_FILM_FETCH, SEARCH__MOVIE, LANGUAGE } from './constants';
 import { openInfoModal } from './openInfoModal';
 import { onMyLibraryClick, onHomeClick } from './header';
+import './Trailer/onTrailerBtnClick';
 
 getRelevantGenresIds();
 fetchFilms(`${BASE_URL}${POPULAR_FILM_FETCH}?api_key=${KEY}&page=${page}&language=${LANGUAGE}`);
@@ -33,4 +34,3 @@ refs.container.addEventListener('click', e => {
 
 refs.myLibrary.addEventListener('click', onMyLibraryClick);
 refs.homeLink.addEventListener('click', onHomeClick);
-

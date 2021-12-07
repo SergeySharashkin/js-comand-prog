@@ -1,0 +1,44 @@
+.tui-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  height: auto !important;
+  @media screen and (max-width: 768px) {
+    gap: 1px;
+  }
+  }
+
+.tui-page-btn {
+  border: none !important;
+  border-radius: 5px;
+  width: 40px !important;
+  height: 40px !important;
+  display: flex !important;
+  color: #000 !important;
+  vertical-align: middle;
+  font-size: 15px !important;
+  line-height: 1.5 !important;
+  align-items: center;
+  justify-content: center;
+  @media screen and (max-width: 375px) {
+    font-size: 13px !important;
+    width: 30px !important;
+    height: 30px !important;
+  }
+  &.tui-is-selected {
+    background-color: #FF6B08 !important;
+    color: #fff !important;
+  }
+
+  @media screen and (max-width: 768px) {
+    &.tui-next-is-ellip,
+    &.tui-prev-is-ellip {
+      display: none !important;
+    }
+    &.tui-prev,
+    &.tui-next {
+     margin: 0 !important;
+      gap: 5px;
+    }
+  }
+}

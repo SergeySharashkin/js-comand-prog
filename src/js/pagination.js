@@ -1,7 +1,7 @@
 import Pagination from 'tui-pagination';
 import { refs } from './refs';
 import { fetchFilms, page } from './fetchFilms';
-import { BASE_URL, KEY, LANGUAGE, POPULAR_FILM_FETCH } from './constants';
+import { BASE_URL, KEY, LANGUAGE, POPULAR_FILM_FETCH, mediaQueryMaxWidth768, mediaQueryMinWidth769 } from './constants';
 
 export function pagination({ totalPages, query, currentPage, page }) {
 
@@ -16,6 +16,7 @@ export function pagination({ totalPages, query, currentPage, page }) {
     centerAlign: true,
     page: page,
   });
+
   instance.on('beforeMove', function(eventData) {
     if (currentPage === 'main') {
       sessionStorage.setItem('mainPage', eventData.page);

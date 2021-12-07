@@ -6,8 +6,7 @@ let watchedFilms = [];
 populateLib();
 
 export function openInfoModal(e) {
-  // e.preventDefault()
-  
+
   const modalName = refs.modalLink.getAttribute('data-info-modal');
   const modal = document.querySelector('.js-info-modal');
   const modalInfoWrapper = document.querySelector('.info-modal-wrapper');
@@ -51,7 +50,7 @@ export function openInfoModal(e) {
           <td>${original}</td>
         </tr>
         <tr>
-        
+
           <th>Genres</th>
           <td>${genres}</td>
         </tr>
@@ -62,7 +61,7 @@ export function openInfoModal(e) {
       <p>${overview}</p>
     </div>
   </div>
-  
+
   `;
   modalInfoWrapper.innerHTML = infoModalContent;
   checkingButtonName();
@@ -129,5 +128,4 @@ function checkingButtonName() {
 
 //   localStorage.setItem(FORM_DATA, JSON.stringify(formData));
 // }
-
 

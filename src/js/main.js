@@ -13,16 +13,19 @@ refs.homeLink.addEventListener('click', e => {
   sessionStorage.removeItem('mainPage');
   fetchFilms(`${BASE_URL}${POPULAR_FILM_FETCH}?api_key=${KEY}&language=${LANGUAGE}`);
 });
+
 refs.homeLogo.addEventListener('click', e => {
   e.preventDefault();
   sessionStorage.removeItem('mainPage');
   fetchFilms(`${BASE_URL}${POPULAR_FILM_FETCH}?api_key=${KEY}&language=${LANGUAGE}`);
 });
+
 refs.form.addEventListener('submit', e => {
   e.preventDefault();
   let searchValue = e.target.elements.search.value.trim();
   fetchFilms(`${BASE_URL}${SEARCH__MOVIE}?api_key=${KEY}&language=${LANGUAGE}`, searchValue);
 });
+
 refs.container.addEventListener('click', e => {
   e.preventDefault();
   if (e.target.nodeName !== 'IMG') {

@@ -1,6 +1,7 @@
 import { getTrailerUrl } from './Trailer/getTrailerUrl';
 import { refs } from './refs';
 let currentId = 0;
+let currentData = {};
 let savedFilms = [];
 let watchedFilms = [];
 populateLib();
@@ -29,6 +30,7 @@ export function openInfoModal(e) {
   console.log(e.target.dataset.original);
   const { popularity, url, title, id, overview, rating, votes, original, genres } = data;
   currentId = data.id;
+  currentData = data;
   console.log(data.url);
   const infoModalContent = `     <div class="modal__card-img">
     <img src="${url}" alt="${title}"  class="modal__img" />
@@ -73,13 +75,16 @@ refs.modalOverlay.addEventListener('click', function () {
 });
 
 refs.watchedBtn.addEventListener('click', e => {
-  if (!watchedFilms.includes(currentId)) {
-    watchedFilms.push(currentId);
+  const watchedFilmsID = watchedFilms.map(film=>film.id);
+    if (!watchedFilmsID.includes(currentId)) {
+    console.log('not')
+    watchedFilms.push(currentData);
+    console.log(watchedFilms);
     localStorage.watchedStorage = JSON.stringify(watchedFilms);
     refs.watchedBtn.textContent = 'remove to watced'
     return console.log('watched add');
   }
-  const index = watchedFilms.indexOf(currentId);
+  const index = watchedFilmsID.indexOf(currentId);
   watchedFilms.splice(index, 1);
   localStorage.watchedStorage = JSON.stringify(watchedFilms);
   refs.watchedBtn.textContent = 'add to watced'
@@ -87,13 +92,14 @@ refs.watchedBtn.addEventListener('click', e => {
 });
 
 refs.queueBtn.addEventListener('click', e => {
-  if (!savedFilms.includes(currentId)) {
-    savedFilms.push(currentId);
+  const savedFilmsID = savedFilms.map(film=>film.id)
+  if (!savedFilmsID.includes(currentId)) {
+    savedFilms.push(currentData);
     localStorage.savedStorage = JSON.stringify(savedFilms);
     refs.queueBtn.textContent = 'remove to queue'
     return console.log('saved add');
   }
-  const index = savedFilms.indexOf(currentId);
+  const index = savedFilmsID.indexOf(currentId);
   savedFilms.splice(index, 1);
   localStorage.savedStorage = JSON.stringify(savedFilms);
   refs.queueBtn.textContent = 'add to queue';
@@ -112,10 +118,12 @@ function populateLib() {
 }
 
 function checkingButtonName() {
-  if (savedFilms.includes(currentId)) {
+  const savedFilmsID = savedFilms.map(film=>film.id);
+  const watchedFilmsID = watchedFilms.map(film=>film.id);
+  if (savedFilmsID.includes(currentId)) {
     refs.queueBtn.textContent = 'remove to queue'
   }
-  if (watchedFilms.includes(currentId)) {
+  if (watchedFilmsID.includes(currentId)) {
     refs.watchedBtn.textContent = 'remove to watched'
   }
 }

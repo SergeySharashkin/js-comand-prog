@@ -4,4 +4,6 @@ const POPULAR_FILM_FETCH = '/trending/movie/week';
 const RELEVANT_GENRES_LIST = '/genre/movie/list';
 const SEARCH__MOVIE = '/search/movie';
 const LANGUAGE = 'ru';
-export { KEY, BASE_URL, POPULAR_FILM_FETCH, RELEVANT_GENRES_LIST, SEARCH__MOVIE, LANGUAGE };
+const mediaQueryMaxWidth768 = window.matchMedia('(max-width: 768px)');
+const mediaQueryMinWidth769 = window.matchMedia('(min-width: 769px)');
+export { KEY, BASE_URL, POPULAR_FILM_FETCH, RELEVANT_GENRES_LIST, SEARCH__MOVIE, LANGUAGE, mediaQueryMaxWidth768, mediaQueryMinWidth769 };

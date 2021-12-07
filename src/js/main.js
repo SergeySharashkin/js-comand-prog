@@ -39,6 +39,8 @@ refs.container.addEventListener('click', e => {
 
 refs.myLibrary.addEventListener('click', onMyLibraryClick);
 refs.homeLink.addEventListener('click', onHomeClick);
+refs.homeLogo.addEventListener('click', onHomeClick);
+
 refs.showWatchedBtn.addEventListener('click', e => {
   if (!refs.showWatchedBtn.classList.contains('header__button--active')) {
     refs.showWatchedBtn.classList.add('header__button--active');

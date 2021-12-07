@@ -1,7 +1,12 @@
 import { getTrailerUrl } from './Trailer/getTrailerUrl';
 import { refs } from './refs';
 let currentId = 0;
+let savedFilms = [];
+let watchedFilms = [];
+populateLib();
+
 export function openInfoModal(e) {
+
   const modalName = refs.modalLink.getAttribute('data-info-modal');
   const modal = document.querySelector('.js-info-modal');
   const modalInfoWrapper = document.querySelector('.info-modal-wrapper');
@@ -59,6 +64,7 @@ export function openInfoModal(e) {
 
   `;
   modalInfoWrapper.innerHTML = infoModalContent;
+  checkingButtonName();
   getTrailerUrl(id);
   refs.openTrailerBtn.setAttribute('data-id', id);
 }
@@ -71,66 +77,55 @@ refs.modalOverlay.addEventListener('click', function () {
   refs.modalClose.parentNode.classList.remove('is-shown');
   refs.modalOverlay.classList.remove('is-shown');
 });
-let savedFilms = [];
-let watchedFilms = [];
-// let targetID = e.target.dataset.id;
-refs.addWatched.addEventListener('click', e => {
-  // const currentId = e.target.dataset.id;
-  // console.log(currentId);
-  if (!watchedFilms.includes(currentId)) {
-    watchedFilms.push(currentId);
-    return console.log('watched add', watchedFilms);
-  }
-  const index = watchedFilms.indexOf(currentId);
-  watchedFilms.splice(index, 1);
-  return console.log('watched remove', watchedFilms);
-});
-refs.addQueue.addEventListener('click', e => {
-  if (!savedFilms.includes(currentId)) {
-    savedFilms.push(currentId);
-    return console.log('saved add', savedFilms);
-  }
-  const index = savedFilms.indexOf(currentId);
-  savedFilms.splice(index, 1);
-  return console.log('saved remove', savedFilms);
-});
 
-// let targetID = e.target.dataset.id;
+
 refs.watchedBtn.addEventListener('click', e => {
-  // const currentId = e.target.dataset.id;
-  // console.log(currentId);
   if (!watchedFilms.includes(currentId)) {
     watchedFilms.push(currentId);
-    return console.log('watched add', watchedFilms);
+    localStorage.watchedStorage = JSON.stringify(watchedFilms);
+    refs.watchedBtn.textContent = 'remove to watced'
+    return console.log('watched add');
   }
   const index = watchedFilms.indexOf(currentId);
   watchedFilms.splice(index, 1);
-  return console.log('watched remove', watchedFilms);
+  localStorage.watchedStorage = JSON.stringify(watchedFilms);
+  refs.watchedBtn.textContent = 'add to watced'
+  return console.log('watched remove');
 });
 refs.queueBtn.addEventListener('click', e => {
   if (!savedFilms.includes(currentId)) {
     savedFilms.push(currentId);
-    return console.log('saved add', savedFilms);
+    localStorage.savedStorage = JSON.stringify(savedFilms);
+    refs.queueBtn.textContent = 'remove to queue'
+    return console.log('saved add');
   }
   const index = savedFilms.indexOf(currentId);
   savedFilms.splice(index, 1);
-  return console.log('saved remove', savedFilms);
+  localStorage.savedStorage = JSON.stringify(savedFilms);
+  refs.queueBtn.textContent = 'add to queue';
+  return console.log('saved remove');
 });
 
-// function addInQueue(id) {
-//   if (!savedFilms.includes(id)) {
-//     savedFilms.push(id);
-//     return;
-//   }
-//   index = savedFilms.indexOf(id);
-//   savedFilms.splice(index, 1)
-//   return
+function populateLib() {
+  if (localStorage.watchedStorage) {
+    watchedFilms = JSON.parse(localStorage.watchedStorage);
+  }
+  if (localStorage.savedStorage) {
+    savedFilms = JSON.parse(localStorage.savedStorage);
+  }
+  
+  return
+}
+function checkingButtonName() {
+  if (savedFilms.includes(currentId)) {
+    refs.queueBtn.textContent = 'remove to queue'
+  }
+  if (watchedFilms.includes(currentId)) {
+    refs.watchedBtn.textContent = 'remove to watched'
+  }
+}
+// function toLocalStorage(name) {
+
+//   localStorage.setItem(FORM_DATA, JSON.stringify(formData));
 // }
-// function addInWatched(id) {
-//   if (!watchedFilms.includes(id)) {
-//     return watchedFilms.push(id);
-//   }
-//   index = watchedFilms.indexOf(id);
-//   watchedFilms.splice(index, 1)
-//   return
-// }
+

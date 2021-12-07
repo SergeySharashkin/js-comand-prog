@@ -22,6 +22,9 @@ export const refs = {
 
   headerBtnContainer: document.querySelector('.header__button-container'),
   header: document.querySelector('.header'),
+  showWatchedBtn: document.querySelector('.show-watched-btn'),
+  showQueueBtn: document.querySelector('.show-queue-btn'),
+
 
   //pagination container
   tuiContainer: document.getElementById('tui-pagination-container'),

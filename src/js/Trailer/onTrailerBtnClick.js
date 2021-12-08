@@ -11,4 +11,5 @@ function onTrailerBtnClick(e) {
 }
 refs.closeTrailerBtn.addEventListener('click', () => {
   toggleModal(refs.trailerBackdrop);
+  document.querySelector('iframe').remove();
 });

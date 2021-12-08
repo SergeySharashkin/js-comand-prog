@@ -75,6 +75,27 @@ refs.modalOverlay.addEventListener('click', function () {
   refs.modalOverlay.classList.remove('is-shown');
 });
 
+refs.modalClose.addEventListener('click', onModalClose);
+
+refs.modalOverlay.addEventListener('click', onModalClose);
+
+
+function onModalClose() {
+
+  refs.modalClose.addEventListener('click', function () {
+    refs.modalClose.parentNode.classList.remove('is-shown');
+    refs.modalOverlay.classList.remove('is-shown');
+    document.body.classList.remove('body-hidden');
+  });
+
+  refs.modalOverlay.addEventListener('click', function () {
+
+    refs.modalClose.parentNode.classList.remove('is-shown');
+    refs.modalOverlay.classList.remove('is-shown');
+    document.body.classList.remove('body-hidden');
+  });
+}
+
 refs.watchedBtn.addEventListener('click', e => {
   const watchedFilmsID = watchedFilms.map(film=>film.id);
     if (!watchedFilmsID.includes(currentId)) {
@@ -117,8 +138,6 @@ function populateLib() {
   if (localStorage.savedStorage) {
     savedFilms = JSON.parse(localStorage.savedStorage);
   }
-
-  return
 }
 
 function checkingButtonName() {

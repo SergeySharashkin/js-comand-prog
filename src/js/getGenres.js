@@ -1,10 +1,12 @@
 import axios from 'axios';
-import { BASE_URL, RELEVANT_GENRES_LIST, KEY } from './constants';
+import { BASE_URL, RELEVANT_GENRES_LIST, KEY, LANGUAGE } from './constants';
 
 let relevantGenresList = [];
 const getRelevantGenresIds = async () => {
   try {
-    const res = await axios.get(`${BASE_URL}${RELEVANT_GENRES_LIST}?api_key=${KEY}`);
+    const res = await axios.get(
+      `${BASE_URL}${RELEVANT_GENRES_LIST}?api_key=${KEY}&language=${LANGUAGE}`,
+    );
     const relevantGenresObj = await res.data;
     relevantGenresList = relevantGenresObj.genres;
     return relevantGenresList;

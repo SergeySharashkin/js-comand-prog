@@ -51,6 +51,7 @@ export function openInfoModal(e) {
     <div class="about">
       <h3>About</h3>
       <p class="description-card">${overview}</p>
+
     </div>
   </div>
 
@@ -84,9 +85,10 @@ refs.watchedBtn.addEventListener('click', e => {
     refs.watchedBtn.textContent = 'remove to watced'
     return console.log('watched add');
   }
-  const index = watchedFilmsID.indexOf(currentId);
-  watchedFilms.splice(index, 1);
-  localStorage.watchedStorage = JSON.stringify(watchedFilms);
+  // const index = watchedFilmsID.indexOf(currentId);
+  const sortWatchedFilms = watchedFilms.filter((film)=> film.id !== currentId);
+  // watchedFilms.splice(index, 1);
+  localStorage.watchedStorage = JSON.stringify(sortWatchedFilms);
   refs.watchedBtn.textContent = 'add to watced'
   return console.log('watched remove');
 });
@@ -100,6 +102,7 @@ refs.queueBtn.addEventListener('click', e => {
     return console.log('saved add');
   }
   const index = savedFilmsID.indexOf(currentId);
+  console.log(currentId);
   savedFilms.splice(index, 1);
   localStorage.savedStorage = JSON.stringify(savedFilms);
   refs.queueBtn.textContent = 'add to queue';
@@ -114,7 +117,6 @@ function populateLib() {
     savedFilms = JSON.parse(localStorage.savedStorage);
   }
 
-  return
 }
 
 function checkingButtonName() {

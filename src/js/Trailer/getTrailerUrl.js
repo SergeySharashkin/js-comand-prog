@@ -13,6 +13,8 @@ export const getTrailerUrl = async id => {
       refs.openTrailerBtn.classList.add('visually-hidden');
       return;
     }
+    refs.posterImg = document.querySelector(`img[data-id="${id}"]`);
+    refs.posterImg.setAttribute('data-trailer', `${results[0].key}`);
     refs.openTrailerBtn.setAttribute('data-key', `${results[0].key}`);
     refs.openTrailerBtn.classList.remove('visually-hidden');
   } catch (error) {

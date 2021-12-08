@@ -13,7 +13,7 @@ export const refs = {
 
   watchedBtn: document.querySelector('#add-watched'),
   queueBtn: document.querySelector('#add-queue'),
-
+  posterImg: null,
   trailerBackdrop: document.querySelector('[data-trailer-modal]'),
   trailerModal: document.querySelector('.trailer-modal'),
   trailerThumb: document.querySelector('.trailer__thumb'),
@@ -24,7 +24,6 @@ export const refs = {
   header: document.querySelector('.header'),
   showWatchedBtn: document.querySelector('.show-watched-btn'),
   showQueueBtn: document.querySelector('.show-queue-btn'),
-
 
   //pagination container
   tuiContainer: document.getElementById('tui-pagination-container'),

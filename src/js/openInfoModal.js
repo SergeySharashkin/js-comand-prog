@@ -52,6 +52,7 @@ export function openInfoModal(e) {
       <h3>About</h3>
       <p class="description-card">${overview}</p>
     </div>
+
   </div>
 
   `;

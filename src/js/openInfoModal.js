@@ -71,19 +71,19 @@ refs.modalOverlay.addEventListener('click', onModalClose);
 
 function onModalClose() {
 
-refs.modalClose.addEventListener('click', function () {
-  refs.modalClose.parentNode.classList.remove('is-shown');
-  refs.modalOverlay.classList.remove('is-shown');
-  document.body.classList.remove('body-hidden');
-});
+  refs.modalClose.addEventListener('click', function () {
+    refs.modalClose.parentNode.classList.remove('is-shown');
+    refs.modalOverlay.classList.remove('is-shown');
+    document.body.classList.remove('body-hidden');
+  });
 
-refs.modalOverlay.addEventListener('click', function () {
+  refs.modalOverlay.addEventListener('click', function () {
 
-  refs.modalClose.parentNode.classList.remove('is-shown');
-  refs.modalOverlay.classList.remove('is-shown');
-  document.body.classList.remove('body-hidden');
-};
-
+    refs.modalClose.parentNode.classList.remove('is-shown');
+    refs.modalOverlay.classList.remove('is-shown');
+    document.body.classList.remove('body-hidden');
+  });
+}
 
 refs.watchedBtn.addEventListener('click', e => {
   const watchedFilmsID = watchedFilms.map(film => film.id);
@@ -95,10 +95,11 @@ refs.watchedBtn.addEventListener('click', e => {
     refs.watchedBtn.textContent = 'remove to watced';
     return console.log('watched add');
   }
-  const index = watchedFilmsID.indexOf(currentId);
-  watchedFilms.splice(index, 1);
-  localStorage.watchedStorage = JSON.stringify(watchedFilms);
-  refs.watchedBtn.textContent = 'add to watced';
+  // const index = watchedFilmsID.indexOf(currentId);
+  const sortWatchedFilms = watchedFilms.filter((film)=> film.id !== currentId);
+  // watchedFilms.splice(index, 1);
+  localStorage.watchedStorage = JSON.stringify(sortWatchedFilms);
+  refs.watchedBtn.textContent = 'add to watced'
   return console.log('watched remove');
 });
 
@@ -111,6 +112,7 @@ refs.queueBtn.addEventListener('click', e => {
     return console.log('saved add');
   }
   const index = savedFilmsID.indexOf(currentId);
+  console.log(currentId);
   savedFilms.splice(index, 1);
   localStorage.savedStorage = JSON.stringify(savedFilms);
   refs.queueBtn.textContent = 'add to queue';
@@ -124,8 +126,6 @@ function populateLib() {
   if (localStorage.savedStorage) {
     savedFilms = JSON.parse(localStorage.savedStorage);
   }
-
-  return;
 }
 
 function checkingButtonName() {

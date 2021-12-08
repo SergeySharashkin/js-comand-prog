@@ -6,6 +6,8 @@ import { openInfoModal } from './openInfoModal';
 import { onMyLibraryClick, onHomeClick } from './header';
 import { pagination } from './pagination';
 import { renderFilmsMarkup } from './renderFilmsMarkup';
+import './Trailer/onTrailerBtnClick';
+
 getRelevantGenresIds();
 
 async function onHomePageHandler(e) {
@@ -29,17 +31,36 @@ refs.form.addEventListener('submit', async e => {
   }
   buildMarkup(await fetchFilms({ query: searchValue, type: SEARCH__MOVIE }));
 });
+
 refs.container.addEventListener('click', e => {
   e.preventDefault();
   if (e.target.nodeName !== 'IMG') {
     return;
   }
   const filmId = e.target.dataset.id;
-  openInfoModal(e);
+  setTimeout(() => {
+    openInfoModal(e);
+  }, 0);
 });
 
 refs.myLibrary.addEventListener('click', onMyLibraryClick);
 refs.homeLink.addEventListener('click', onHomeClick);
+refs.homeLogo.addEventListener('click', onHomeClick);
+
+refs.showWatchedBtn.addEventListener('click', e => {
+  if (!refs.showWatchedBtn.classList.contains('header__button--active')) {
+    refs.showWatchedBtn.classList.add('header__button--active');
+    refs.showQueueBtn.classList.remove('header__button--active');
+    // Серёга, добавляй свою функцию после этой строчки :)
+  }
+});
+refs.showQueueBtn.addEventListener('click', e => {
+  if (refs.showWatchedBtn.classList.contains('header__button--active')) {
+    refs.showWatchedBtn.classList.remove('header__button--active');
+    refs.showQueueBtn.classList.add('header__button--active');
+    // Серёга, добавляй свою функцию после этой строчки :)
+  }
+});
 
 function buildMarkup({ results, total_results, page }) {
   renderFilmsMarkup(results);

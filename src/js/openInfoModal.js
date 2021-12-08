@@ -86,9 +86,10 @@ refs.watchedBtn.addEventListener('click', e => {
     return console.log('watched add');
   }
   // const index = watchedFilmsID.indexOf(currentId);
-  const sortWatchedFilms = watchedFilms.filter((film)=> film.id !== currentId);
+  const filterWatchedFilms = watchedFilms.filter((film)=> film.id !== currentId);
+  console.log('watchedFilms', watchedFilms);
   // watchedFilms.splice(index, 1);
-  localStorage.watchedStorage = JSON.stringify(sortWatchedFilms);
+  localStorage.watchedStorage = JSON.stringify(filterWatchedFilms);
   refs.watchedBtn.textContent = 'add to watced'
   return console.log('watched remove');
 });
@@ -117,6 +118,7 @@ function populateLib() {
     savedFilms = JSON.parse(localStorage.savedStorage);
   }
 
+  return
 }
 
 function checkingButtonName() {

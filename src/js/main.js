@@ -38,9 +38,7 @@ refs.container.addEventListener('click', e => {
     return;
   }
   const filmId = e.target.dataset.id;
-  setTimeout(() => {
-    openInfoModal(e);
-  }, 0);
+  openInfoModal(e);
 });
 
 refs.myLibrary.addEventListener('click', onMyLibraryClick);
@@ -65,15 +63,14 @@ refs.showQueueBtn.addEventListener('click', e => {
 function buildMarkup({ results, total_results, page }) {
   renderFilmsMarkup(results);
   pagination({ totalItems: total_results, page }, onClickPagePagination);
-
 }
 
 async function onClickPagePagination(eventData) {
   sessionStorage.setItem('mainPage', eventData.page);
-  buildMarkup(await fetchFilms({page: eventData.page}));
+  buildMarkup(await fetchFilms({ page: eventData.page }));
 }
 
-(async function() {
+(async function () {
   let page = Number(sessionStorage.getItem('mainPage')) || 1;
-  buildMarkup(await fetchFilms({page}))
+  buildMarkup(await fetchFilms({ page }));
 })();

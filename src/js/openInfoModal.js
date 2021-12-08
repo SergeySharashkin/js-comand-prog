@@ -62,7 +62,6 @@ export function openInfoModal(e) {
   refs.openTrailerBtn.setAttribute('data-id', id);
 }
 
-
 refs.modalClose.addEventListener('click', function () {
   refs.modalClose.parentNode.classList.remove('is-shown');
   refs.modalOverlay.classList.remove('is-shown');

@@ -1,7 +1,6 @@
 import coverImage from '../images/default_image.jpg';
 import { convertIdsToGenres } from './getGenres';
 import { refs } from './refs';
-
 export const renderFilmsMarkup = films => {
   const popularFilmsMarkup = films
     .map(

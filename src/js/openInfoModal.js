@@ -49,6 +49,7 @@ export function openInfoModal(e) {
     <div class="about">
       <h3>About</h3>
       <p class="description-card">${overview}</p>
+
     </div>
 
   </div>
@@ -60,18 +61,17 @@ export function openInfoModal(e) {
   refs.openTrailerBtn.setAttribute('data-id', id);
 }
 
+refs.modalClose.addEventListener('click', onModalClose);
 
-refs.modalClose.addEventListener('click', function () {
+refs.modalOverlay.addEventListener('click', onModalClose);
+
+
+function onModalClose() {
   refs.modalClose.parentNode.classList.remove('is-shown');
   refs.modalOverlay.classList.remove('is-shown');
   document.body.classList.remove('body-hidden');
-});
+};
 
-
-refs.modalOverlay.addEventListener('click', function () {
-  refs.modalClose.parentNode.classList.remove('is-shown');
-  refs.modalOverlay.classList.remove('is-shown');
-});
 
 refs.watchedBtn.addEventListener('click', e => {
   if (!watchedFilms.includes(currentId)) {

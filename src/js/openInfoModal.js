@@ -7,13 +7,9 @@ let watchedFilms = [];
 populateLib();
 
 export function openInfoModal(e) {
-
   const modalName = refs.modalLink.getAttribute('data-info-modal');
   const modal = document.querySelector('.js-info-modal');
   const modalInfoWrapper = document.querySelector('.info-modal-wrapper');
-  // const bodyHidden = document.querySelector('')
-  modal.classList.add('is-shown');
-  refs.modalOverlay.classList.add('is-shown');
   document.body.classList.add('body-hidden');
 
   const data = {
@@ -59,8 +55,11 @@ export function openInfoModal(e) {
   checkingButtonName();
   getTrailerUrl(id);
   refs.openTrailerBtn.setAttribute('data-id', id);
+  setTimeout(() => {
+    modal.classList.add('is-shown');
+    refs.modalOverlay.classList.add('is-shown');
+  }, 0);
 }
-
 
 refs.modalClose.addEventListener('click', function () {
   refs.modalClose.parentNode.classList.remove('is-shown');
@@ -68,35 +67,34 @@ refs.modalClose.addEventListener('click', function () {
   document.body.classList.remove('body-hidden');
 });
 
-
 refs.modalOverlay.addEventListener('click', function () {
   refs.modalClose.parentNode.classList.remove('is-shown');
   refs.modalOverlay.classList.remove('is-shown');
 });
 
 refs.watchedBtn.addEventListener('click', e => {
-  const watchedFilmsID = watchedFilms.map(film=>film.id);
-    if (!watchedFilmsID.includes(currentId)) {
-    console.log('not')
+  const watchedFilmsID = watchedFilms.map(film => film.id);
+  if (!watchedFilmsID.includes(currentId)) {
+    console.log('not');
     watchedFilms.push(currentData);
     console.log(watchedFilms);
     localStorage.watchedStorage = JSON.stringify(watchedFilms);
-    refs.watchedBtn.textContent = 'remove to watced'
+    refs.watchedBtn.textContent = 'remove to watced';
     return console.log('watched add');
   }
   const index = watchedFilmsID.indexOf(currentId);
   watchedFilms.splice(index, 1);
   localStorage.watchedStorage = JSON.stringify(watchedFilms);
-  refs.watchedBtn.textContent = 'add to watced'
+  refs.watchedBtn.textContent = 'add to watced';
   return console.log('watched remove');
 });
 
 refs.queueBtn.addEventListener('click', e => {
-  const savedFilmsID = savedFilms.map(film=>film.id)
+  const savedFilmsID = savedFilms.map(film => film.id);
   if (!savedFilmsID.includes(currentId)) {
     savedFilms.push(currentData);
     localStorage.savedStorage = JSON.stringify(savedFilms);
-    refs.queueBtn.textContent = 'remove to queue'
+    refs.queueBtn.textContent = 'remove to queue';
     return console.log('saved add');
   }
   const index = savedFilmsID.indexOf(currentId);
@@ -114,16 +112,16 @@ function populateLib() {
     savedFilms = JSON.parse(localStorage.savedStorage);
   }
 
-  return
+  return;
 }
 
 function checkingButtonName() {
-  const savedFilmsID = savedFilms.map(film=>film.id);
-  const watchedFilmsID = watchedFilms.map(film=>film.id);
+  const savedFilmsID = savedFilms.map(film => film.id);
+  const watchedFilmsID = watchedFilms.map(film => film.id);
   if (savedFilmsID.includes(currentId)) {
-    refs.queueBtn.textContent = 'remove to queue'
+    refs.queueBtn.textContent = 'remove to queue';
   }
   if (watchedFilmsID.includes(currentId)) {
-    refs.watchedBtn.textContent = 'remove to watched'
+    refs.watchedBtn.textContent = 'remove to watched';
   }
 }

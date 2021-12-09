@@ -10,13 +10,15 @@ export const getTrailerUrl = async id => {
     const extendedInfo = await response.data;
     const { results } = extendedInfo;
     if (!results[0]) {
-      refs.openTrailerBtn.classList.add('visually-hidden');
+      // refs.openTrailerBtn.classList.add('visually-hidden');
       return;
     }
     refs.posterImg = document.querySelector(`img[data-id="${id}"]`);
     refs.posterImg.setAttribute('data-trailer', `${results[0].key}`);
-    refs.openTrailerBtn.setAttribute('data-key', `${results[0].key}`);
-    refs.openTrailerBtn.classList.remove('visually-hidden');
+    let openTrailerBtn = document.createElement('button');
+
+    // refs.openTrailerBtn.setAttribute('data-key', `${results[0].key}`);
+    // refs.openTrailerBtn.classList.remove('visually-hidden');
   } catch (error) {
     console.log(error.message);
   }

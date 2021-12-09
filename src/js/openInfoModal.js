@@ -107,7 +107,6 @@ refs.watchedBtn.addEventListener('click', e => {
   }
   // const index = watchedFilmsID.indexOf(currentId);
   const filterWatchedFilms = watchedFilms.filter((film)=> film.id !== currentId);
-  console.log('watchedFilms', watchedFilms);
   // watchedFilms.splice(index, 1);
   localStorage.watchedStorage = JSON.stringify(filterWatchedFilms);
   refs.watchedBtn.textContent = 'add to watced'
@@ -122,10 +121,11 @@ refs.queueBtn.addEventListener('click', e => {
     refs.queueBtn.textContent = 'remove to queue'
     return console.log('saved add');
   }
-  const index = savedFilmsID.indexOf(currentId);
-  console.log(currentId);
-  savedFilms.splice(index, 1);
-  localStorage.savedStorage = JSON.stringify(savedFilms);
+  // const index = savedFilmsID.indexOf(currentId);
+  // console.log(currentId);
+  // savedFilms.splice(index, 1);
+  const filterSavedFilms = savedFilms.filter((film)=> film.id !== currentId);
+  localStorage.savedStorage = JSON.stringify(filterSavedFilms);
   refs.queueBtn.textContent = 'add to queue';
   return console.log('saved remove');
 });

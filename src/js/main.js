@@ -5,6 +5,7 @@ import { KEY, BASE_URL, POPULAR_FILM_FETCH, SEARCH__MOVIE, LANGUAGE } from './co
 import { openInfoModal } from './openInfoModal';
 import { onMyLibraryClick, onHomeClick } from './header';
 import './Trailer/onTrailerBtnClick';
+import './snow';
 
 getRelevantGenresIds();
 fetchFilms(`${BASE_URL}${POPULAR_FILM_FETCH}?api_key=${KEY}&page=${page}&language=${LANGUAGE}`);

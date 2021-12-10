@@ -7,6 +7,7 @@ import { onMyLibraryClick, onHomeClick } from './header';
 import { pagination } from './pagination';
 import { renderFilmsMarkup } from './renderFilmsMarkup';
 import './Trailer/onTrailerBtnClick';
+import './library/library';
 
 // import './snow';
 

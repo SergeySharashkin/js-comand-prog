@@ -31,7 +31,7 @@ refs.form.addEventListener('submit', async e => {
   let searchValue = e.target.elements.search.value.trim();
   if (!searchValue) {
     //TODO!!!!!!!!!!!!!!!!!!!!подключить NOTYFLIX!!!!!!!!!!!!!!!!
-    console.logт('query string can not be empty');
+    console.error('query string can not be empty');
     return;
   }
   buildMarkup(await fetchFilms({ query: searchValue, type: SEARCH__MOVIE }));

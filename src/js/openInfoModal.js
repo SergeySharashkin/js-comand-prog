@@ -57,7 +57,7 @@ export function openInfoModal(e) {
 
           <li class="modal__list-item">Popularity<span class="modal__list-item_value">${popularity}</span></li>
 
-          <li class="modal__list-item">Original Title<span class="modal__list-item_value">${original}</span></li>
+          <li class="modal__list-item">Original Title<span class="modal__list-item_value original-title">${original}</span></li>
 
           <li class="modal__list-item">Genres<span class="modal__list-item_value">${genres}</span></li>
 

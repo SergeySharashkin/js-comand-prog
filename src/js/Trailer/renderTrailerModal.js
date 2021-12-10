@@ -1,6 +1,7 @@
 import { refs } from '../refs';
 
 export function renderTrailerModal(key) {
+  refs.trailerThumb.style.backgroundImage = `//img.youtube.com/vi/${key}/mqdefault.jpg`;
   const trailerUrl = `https://www.youtube.com/embed/${key}?autoplay=1&enablejsapi=1&rel=0&modestbranding=1&`;
   const video = `<iframe
       id="player"

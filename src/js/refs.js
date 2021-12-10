@@ -15,7 +15,7 @@ export const refs = {
 
   watchedBtn: null,
   queueBtn: null,
-  openTrailerBtn: document.querySelector('.trailer-btn'),
+  openTrailerBtn: null,
   posterImg: null,
   trailerBackdrop: document.querySelector('[data-trailer-modal]'),
   trailerModal: document.querySelector('.trailer-modal'),

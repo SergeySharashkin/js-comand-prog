@@ -2,13 +2,22 @@
  * Главный файл стилей.
  * Все паршалы подключаются сюда.
  */
-
+// Utils
 @import './utils/variables';
+@import './utils/light-theme-variables';
+@import './utils/dark-theme-variables';
+
+// Base
 @import './base/common';
+
+// Components
+@import './components/theme-toggle-btn';
+
+// Partials
 @import './partials/header';
 @import './partials/main';
 @import './partials/footer';
 @import './partials/modal';
 @import './partials/trailer-modal';
-@import './partials/film-card-template';
+// @import './partials/film-card-template';
 @import './partials/pagination';

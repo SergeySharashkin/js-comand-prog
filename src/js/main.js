@@ -8,6 +8,7 @@ import { pagination } from './pagination';
 import { renderFilmsMarkup } from './renderFilmsMarkup';
 import './Trailer/onTrailerBtnClick';
 import './library/library';
+import './toggle-theme';
 
 // import './snow';
 

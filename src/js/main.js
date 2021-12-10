@@ -1,3 +1,4 @@
+import Notiflix from 'notiflix';
 import { getRelevantGenresIds } from './getGenres';
 import { fetchFilms, clearQueryString } from './fetchFilms';
 import { refs } from './refs';
@@ -30,9 +31,7 @@ refs.form.addEventListener('submit', async e => {
   sessionStorage.removeItem('mainPage');
   let searchValue = e.target.elements.search.value.trim();
   if (!searchValue) {
-    //TODO!!!!!!!!!!!!!!!!!!!!подключить NOTYFLIX!!!!!!!!!!!!!!!!
-    console.error('query string can not be empty');
-    return;
+    Notiflix.Notify.warning('Query string can not be empty');
   }
   buildMarkup(await fetchFilms({ query: searchValue, type: SEARCH__MOVIE }));
 });

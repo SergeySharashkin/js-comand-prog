@@ -7,7 +7,7 @@ import { onMyLibraryClick, onHomeClick } from './header';
 import { pagination } from './pagination';
 import { renderFilmsMarkup } from './renderFilmsMarkup';
 import './Trailer/onTrailerBtnClick';
-import './snow';
+import './library/library';
 
 getRelevantGenresIds();
 
@@ -50,14 +50,12 @@ refs.showWatchedBtn.addEventListener('click', e => {
   if (!refs.showWatchedBtn.classList.contains('header__button--active')) {
     refs.showWatchedBtn.classList.add('header__button--active');
     refs.showQueueBtn.classList.remove('header__button--active');
-    // Серёга, добавляй свою функцию после этой строчки :)
   }
 });
 refs.showQueueBtn.addEventListener('click', e => {
   if (refs.showWatchedBtn.classList.contains('header__button--active')) {
     refs.showWatchedBtn.classList.remove('header__button--active');
     refs.showQueueBtn.classList.add('header__button--active');
-    // Серёга, добавляй свою функцию после этой строчки :)
   }
 });
 

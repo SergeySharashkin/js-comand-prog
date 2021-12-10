@@ -2,7 +2,7 @@ import coverImage from '../images/default_image.jpg';
 import { convertIdsToGenres } from './getGenres';
 import { refs } from './refs';
 export const renderFilmsMarkup = films => {
-  const popularFilmsMarkup = films
+  const FilmsMarkup = films
     .map(
       ({
         title,
@@ -39,6 +39,7 @@ export const renderFilmsMarkup = films => {
               data-rating="${vote_average}"
               data-count="${vote_count}"
               data-genres="${convertIdsToGenres(genre_ids)}"
+              data-date="${date}"
               width="300px"
               loading="lazy"
             />
@@ -55,5 +56,5 @@ export const renderFilmsMarkup = films => {
       },
     )
     .join('');
-  refs.container.innerHTML = popularFilmsMarkup;
+  refs.container.innerHTML = FilmsMarkup;
 };

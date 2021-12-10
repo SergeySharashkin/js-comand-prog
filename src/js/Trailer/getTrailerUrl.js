@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { BASE_URL, KEY, LANGUAGE } from '../constants';
 import { refs } from '../refs';
+import { onTrailerBtnClick } from './onTrailerBtnClick';
+import { toggleModal } from './toggleModal';
 
 export const getTrailerUrl = async id => {
   try {
@@ -10,15 +12,23 @@ export const getTrailerUrl = async id => {
     const extendedInfo = await response.data;
     const { results } = extendedInfo;
     if (!results[0]) {
-      // refs.openTrailerBtn.classList.add('visually-hidden');
       return;
     }
     refs.posterImg = document.querySelector(`img[data-id="${id}"]`);
     refs.posterImg.setAttribute('data-trailer', `${results[0].key}`);
-    let openTrailerBtn = document.createElement('button');
+    const modalAddBtns = document.querySelector('.modal-add-btns');
+    const openTrailerBtn = document.createElement('button');
+    openTrailerBtn.setAttribute('data-trailer', `${results[0].key}`);
+    openTrailerBtn.classList.add('add-btn', 'trailer-btn');
 
-    // refs.openTrailerBtn.setAttribute('data-key', `${results[0].key}`);
-    // refs.openTrailerBtn.classList.remove('visually-hidden');
+    openTrailerBtn.textContent = 'Trailer';
+    modalAddBtns.prepend(openTrailerBtn);
+    refs.openTrailerBtn = document.querySelector('.trailer-btn');
+    refs.openTrailerBtn.addEventListener('click', onTrailerBtnClick);
+    refs.closeTrailerBtn.addEventListener('click', () => {
+      toggleModal(refs.trailerBackdrop);
+      refs.trailerThumb.innerHTML = '';
+    });
   } catch (error) {
     console.log(error.message);
   }

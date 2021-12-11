@@ -122,17 +122,6 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
-function populateLib() {
-  if (localStorage.watchedStorage) {
-    watchedFilms = JSON.parse(localStorage.watchedStorage);
-  }
-  if (localStorage.savedStorage) {
-    savedFilms = JSON.parse(localStorage.savedStorage);
-  }
-
-  return;
-}
-
 function getStorageItems() {
   if (localStorage.getItem('watchedStorage')) {
     const watchedJson = localStorage.getItem('watchedStorage');

@@ -2,7 +2,6 @@ import axios from 'axios';
 import { BASE_URL, KEY, LANGUAGE } from '../constants';
 import { refs } from '../refs';
 import { onTrailerBtnClick } from './onTrailerBtnClick';
-import { toggleModal } from './toggleModal';
 
 export const getTrailerUrl = async id => {
   try {
@@ -26,7 +25,7 @@ export const getTrailerUrl = async id => {
     refs.openTrailerBtn = document.querySelector('.trailer-btn');
     refs.openTrailerBtn.addEventListener('click', onTrailerBtnClick);
     refs.closeTrailerBtn.addEventListener('click', () => {
-      toggleModal(refs.trailerBackdrop);
+      refs.trailerBackdrop.classList.add('visually-hidden');
       refs.trailerThumb.innerHTML = '';
     });
   } catch (error) {

@@ -11,4 +11,5 @@ export function onTrailerBtnClick(e) {
 
 refs.closeTrailerBtn.addEventListener('click', () => {
   toggleModal(refs.trailerBackdrop);
+  refs.trailerThumb.innerHTML = '';
 });

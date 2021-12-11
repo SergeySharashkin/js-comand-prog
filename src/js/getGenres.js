@@ -1,22 +1,22 @@
 import axios from 'axios';
-import Notiflix from 'notiflix';
+// import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import { BASE_URL, RELEVANT_GENRES_LIST, KEY, LANGUAGE } from './constants';
 
 let relevantGenresList = [];
 const getRelevantGenresIds = async () => {
   try {
-    Notiflix.Loading.pulse({ svgColor: '#ff6b08' });
+    // Loading.pulse({ svgColor: '#ff6b08' });
 
     const res = await axios.get(
       `${BASE_URL}${RELEVANT_GENRES_LIST}?api_key=${KEY}&language=${LANGUAGE}`,
     );
     const relevantGenresObj = await res.data;
     relevantGenresList = relevantGenresObj.genres;
-    Notiflix.Loading.remove();
+    // Loading.remove();
     return relevantGenresList;
   } catch (error) {
     console.log(error.message);
-    Notiflix.Loading.remove();
+    // Loading.remove();
   }
 };
 

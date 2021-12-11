@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { BASE_URL, KEY, LANGUAGE, POPULAR_FILM_FETCH, SEARCH__MOVIE } from './constants';
-import Notiflix from 'notiflix';
+import { Loading } from 'notiflix/build/notiflix-loading-aio';
 
 let queryString = '';
 
@@ -8,7 +8,7 @@ export const fetchFilms = async ({ query = '', page = 1, type = POPULAR_FILM_FET
   try {
     if (query) {
       queryString = query;
-      Notiflix.Loading.pulse({ svgColor: '#ff6b08' });
+      Loading.pulse({ svgColor: '#ff6b08' });
     }
 
     if (queryString) {
@@ -17,11 +17,11 @@ export const fetchFilms = async ({ query = '', page = 1, type = POPULAR_FILM_FET
     const response = await axios.get(
       `${BASE_URL}${type}?api_key=${KEY}&page=${page}&language=${LANGUAGE}&query=${queryString}`,
     );
-    Notiflix.Loading.remove();
+    Loading.remove();
     return await response.data;
   } catch (error) {
     console.log(error.message);
-    Notiflix.Loading.remove();
+    Loading.remove();
   }
 };
 

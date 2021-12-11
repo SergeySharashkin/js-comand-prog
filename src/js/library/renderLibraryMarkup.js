@@ -2,7 +2,6 @@ import coverImage from '../../images/default_image.jpg';
 import { refs } from '../refs';
 
 export const renderLibraryMarkup = films => {
-  console.log(films);
   const filmsMarkup = films
     .map(({ alt, date, count, genres, id, original, overview, popularity, rating, url }) => {
       let imageSrc = coverImage;

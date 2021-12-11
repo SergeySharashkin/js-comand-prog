@@ -1,4 +1,4 @@
-import Notiflix from 'notiflix';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { getRelevantGenresIds } from './getGenres';
 import { fetchFilms, clearQueryString } from './fetchFilms';
 import { refs } from './refs';
@@ -31,7 +31,7 @@ refs.form.addEventListener('submit', async e => {
   sessionStorage.removeItem('mainPage');
   let searchValue = e.target.elements.search.value.trim();
   if (!searchValue) {
-    Notiflix.Notify.warning('Query string can not be empty');
+    Notify.warning('Query string cannot be empty');
   }
   buildMarkup(await fetchFilms({ query: searchValue, type: SEARCH__MOVIE }));
 });

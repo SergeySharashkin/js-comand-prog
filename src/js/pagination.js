@@ -1,6 +1,7 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.min.css';
 import { refs } from './refs';
+import slowScroll from './slow-scroll';
 
 export function pagination({ totalItems, page }, onClickPagePagination) {
 
@@ -16,5 +17,5 @@ export function pagination({ totalItems, page }, onClickPagePagination) {
     page: page,
   });
   instance.on('beforeMove', onClickPagePagination);
-
+  slowScroll();
 }

@@ -1,5 +1,5 @@
 <header class="header">
-  <div class="wrapper">
+  <!-- <div class="wrapper"> -->
     <div class="header__links-container">
       <a href="#" class="header__logo">
         <svg class="logo__image" width="24" height="24">
@@ -20,7 +20,6 @@
       <label class="header__input-label" for="search"></label>
       <div class="header__input-thumb">
         <input type="text" class="header__input" name="search" placeholder="Поиск фильмов" />
-
         <button type="submit" class="search-btn">
           <svg width="12" height="12">
             <use href="../src/images/icons.svg#icon-search"></use>
@@ -29,8 +28,10 @@
       </div>
     </form>
     <div class="header__button-container">
-      <button class="header__button watched-btn header__button--active">Watched</button>
-      <button class="header__button queue-btn">Queue</button>
+      <button class="header__button show-watched-btn header__button--active" type="button">
+        Watched
+      </button>
+      <button class="header__button show-queue-btn" type="button">Queue</button>
     </div>
-  </div>
+  <!-- </div> -->
 </header>

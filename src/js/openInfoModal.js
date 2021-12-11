@@ -72,6 +72,13 @@ function onModalClose() {
   document.body.classList.remove('body-hidden');
 };
 
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    onModalClose()
+  }
+});
+
+
 
 refs.watchedBtn.addEventListener('click', e => {
   if (!watchedFilms.includes(currentId)) {

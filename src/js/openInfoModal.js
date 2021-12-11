@@ -114,42 +114,12 @@ function onModalClose() {
   refs.modalClose.parentNode.classList.remove('is-shown');
   refs.modalOverlay.classList.remove('is-shown');
   document.body.classList.remove('body-hidden');
-};
+}
 
-document.addEventListener('keydown', function(e) {
+document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape') {
-    onModalClose()
+    onModalClose();
   }
-});
-
-
-
-refs.watchedBtn.addEventListener('click', e => {
-  if (!watchedFilms.includes(currentId)) {
-    watchedFilms.push(currentId);
-    localStorage.watchedStorage = JSON.stringify(watchedFilms);
-    refs.watchedBtn.textContent = 'remove to watced'
-    return console.log('watched add');
-  }
-  const index = watchedFilms.indexOf(currentId);
-  watchedFilms.splice(index, 1);
-  localStorage.watchedStorage = JSON.stringify(watchedFilms);
-  refs.watchedBtn.textContent = 'add to watced'
-  return console.log('watched remove');
-});
-
-refs.queueBtn.addEventListener('click', e => {
-  if (!savedFilms.includes(currentId)) {
-    savedFilms.push(currentId);
-    localStorage.savedStorage = JSON.stringify(savedFilms);
-    refs.queueBtn.textContent = 'remove to queue'
-    return console.log('saved add');
-  }
-  const index = savedFilms.indexOf(currentId);
-  savedFilms.splice(index, 1);
-  localStorage.savedStorage = JSON.stringify(savedFilms);
-  refs.queueBtn.textContent = 'add to queue';
-  return console.log('saved remove');
 });
 
 function populateLib() {
@@ -160,7 +130,7 @@ function populateLib() {
     savedFilms = JSON.parse(localStorage.savedStorage);
   }
 
-  return
+  return;
 }
 
 function getStorageItems() {

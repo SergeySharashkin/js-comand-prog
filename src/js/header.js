@@ -8,8 +8,6 @@ function onMyLibraryClick() {
     refs.form.classList.add('header__form--my-library');
     refs.headerBtnContainer.classList.add('header__button-container--my-library');
   }
-  refs.showWatchedBtn.classList.add('header__button--active');
-  refs.showQueueBtn.classList.remove('header__button--active');
 }
 
 function onHomeClick() {
@@ -22,4 +20,4 @@ function onHomeClick() {
   }
 }
 
-export { onMyLibraryClick, onHomeClick };
+export { onMyLibraryClick, onHomeClick }

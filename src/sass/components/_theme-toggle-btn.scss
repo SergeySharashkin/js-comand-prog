@@ -46,12 +46,7 @@
 .switcher:checked + .slider {
     background-color: #f6f0ea; 
 }
-
-
-.switcher:focus + .slider.round:before {
-    box-shadow: 0 0 5px 5px var(--accent-color);
-}
-
+// .switcher:focus + .slider.round:before,
 .switcher:hover + .slider.round:before {
     box-shadow: 0 0 5px 5px var(--accent-color);
 }

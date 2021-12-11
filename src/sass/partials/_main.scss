@@ -3,6 +3,7 @@
   padding-top: 60px;
   padding-bottom: 50px;
   background-color: var(--main-background-color);
+  transition: var(--transition-delay);
 }
 
 // =============== Film-cards-styles =============//
@@ -89,13 +90,22 @@
 
 }
 
-.dark .list-item__link:hover,
-.dark .list-item__link:focus::after {
+// .dark .list-item__link:focus::after,
+.dark .list-item__link:hover::after {
   display: block;
   animation: animate 5000ms linear infinite;
   
   box-shadow: 0px 0px 15px 5px #ec640a;
       
+}
+
+@keyframes animate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
 }
 
 .list-item__thumb {
@@ -141,11 +151,3 @@
   color: var(--accent-color);
 }
 
-@keyframes animate {
-  from {
-    filter: hue-rotate(0deg);
-  }
-  to {
-    filter: hue-rotate(360deg);
-  }
-}

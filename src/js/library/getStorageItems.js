@@ -1,3 +1,5 @@
+const PER_PAGE = 20;
+
 export let inLibraryFilms = [];
 
 export function getStorageItems(librarySection) {
@@ -6,4 +8,9 @@ export function getStorageItems(librarySection) {
     inLibraryFilms = JSON.parse(inLibraryJson);
     return inLibraryFilms;
   }
+}
+
+export function getByPage(page = 1) {
+  const start = (page - 1) * PER_PAGE;
+  return [...inLibraryFilms].splice(start, PER_PAGE);
 }

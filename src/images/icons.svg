@@ -26,7 +26,6 @@
 <path fill="#fcdd66" style="fill: var(--color3, #fcdd66)" d="M21.744 16c0 3.172-2.572 5.744-5.744 5.744s-5.744-2.572-5.744-5.744c0-3.172 2.572-5.744 5.744-5.744s5.744 2.572 5.744 5.744z"></path>
 </symbol>
 
-
 <symbol id="icon-moon" viewBox="0 0 32 32">
 <path fill="#ffde55" style="fill: var(--color1, #ffde55)" d="M28.087 14.728l2.87-3.178-4.19-0.884-2.136-3.711v10.284l3.909 1.747z"></path>
 <path fill="#ffeb99" style="fill: var(--color2, #ffeb99)" d="M22.496 10.665l-4.19 0.884 2.87 3.178-0.454 4.258 3.909-1.747v-10.284z"></path>

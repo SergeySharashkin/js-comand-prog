@@ -47,10 +47,15 @@
     background-color: #f6f0ea; 
 }
 
-.switcher:focus,
+
+.switcher:focus + .slider.round:before {
+    box-shadow: 0 0 5px 5px var(--accent-color);
+}
+
 .switcher:hover + .slider.round:before {
     box-shadow: 0 0 5px 5px var(--accent-color);
 }
+
 
 .switcher:checked + .slider:before {
     transform: translateX(24px);
@@ -66,9 +71,4 @@
 .slider.round:before {
     border-radius: 50%;
     
-    .slider.round:hover,
-    .slider.round:focus & {
-        animation: animate 4s linear infinite;
-        box-shadow: 0px 0px 15px 5px #0aec0a;
-    }
 }

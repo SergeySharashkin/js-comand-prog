@@ -89,7 +89,8 @@
 
 }
 
-.dark .list-item__link:hover::after {
+.dark .list-item__link:hover,
+.dark .list-item__link:focus::after {
   display: block;
   animation: animate 5000ms linear infinite;
   

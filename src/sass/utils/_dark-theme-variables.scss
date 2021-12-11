@@ -1,10 +1,10 @@
 .dark {
     --main-background-color: #{$dark-bg-color} ;
     --shadow-color: #{$light-orange-color};
-    --footer-background-color: #413f3f;
+    --footer-background-color: #{$light-dark-bg-color};
     --footer-text-color: #{$white-color}; 
     --accent-color: #{$orange-color};
-    --text-color: #{$white-color};
+    --text-color: #{$cream-color};
     --toggle-btn-color: #{$orange-color};
     --modal-window-bg-color: #{$light-dark-bg-color};
 }

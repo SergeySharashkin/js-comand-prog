@@ -138,15 +138,20 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 1.17;
-  text-transform: uppercase;
   
   color: var(--text-color);
+}
+
+.list-item__title {
+
+  text-transform: uppercase;
 }
 
 .list-item__text {
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
+  text-transform: capitalize;
   
   color: var(--accent-color);
 }

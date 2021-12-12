@@ -1,63 +1,199 @@
 .header {
-  height: 230px;
-  max-width: 320px;
-  padding: 46px 20px 0 20px;
+  margin: 0 auto;
+  // height: 230px;
+  // max-width: 320px;
+
+  padding: 46px 0 0 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
     url('../images/header-image-home.jpg');
-  //   display: flex;
-  //   flex-direction: column;
+  @media screen and (min-width: 768px) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/header-image-home-tablet.jpg');
+  }
+  @media screen and (min-width: 1024px) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/header-image-home-desktop.jpg');
+  }
 }
 .header__links-container {
   display: flex;
   align-items: baseline;
+  // max-width: 320px;
+  // //   background-color: green;
+  //   @media screen and (min-width: 768px) {
+  //     max-width: 768px;
+  //   }
+  //   @media screen and (min-width: 1024px) {
+  //     max-width: 1024px;
+  // }
 }
 .header__links {
-    display: flex;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  margin: 0;
+  padding: 0;
 }
-.header__home-link, .header__my-library-link {
-    font-weight: 500;
-    text-decoration: none;
-    text-transform: uppercase;
+.header__logo {
+  text-decoration: none;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+  }
+  // @media screen and (min-width: 1024px) {
+  //   padding: 0 71px;
+  //   max-width: 1024px;
+  // }
+}
+.logo__text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 35px;
+  color: #ffffff;
+  margin-left: 10px;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+.header__home-link,
+.header__my-library-link {
+  position: relative;
 
-color: #FFFFFF;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+.header__link--active::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  height: 3px;
+  // border: 1px solid #000000;
+  width: 100%;
+  bottom: 0;
+  background-color: #ff6b08;
+  // @media screen and (min-width:768px) {
+  //   border: none;
+  // }
 }
 .header__home-link {
-    margin-right: 39px;
+  margin-right: 39px;
 }
 .header__logo {
   margin-right: auto;
 }
-.logo__image {
-  fill: #818181;
-}
+
 .logo__text {
   display: none;
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
 }
-.header__input-label {
-    position: relative;
+.header__input-thumb {
+  display: flex;
 
+  justify-content: center;
+
+  width: 100%;
+  max-width: 336px;
+  position: relative;
 }
 .header__input {
-
   width: 100%;
 
   border-top: 0;
   border-left: 0;
   border-right: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  outline: none;
 
   margin-top: 41px;
+  margin-bottom: 97px;
 
   background-color: transparent;
+  color: #ffffff;
+  @media screen and (min-width: 768px) {
+    max-width: 336px;
+    margin: 37px auto 97px auto;
+  }
 }
 .header__input::placeholder {
-    color: #FFFFFF;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: $font;
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+  }
+}
+.header__form {
+  display: flex;
+  justify-content: center;
+}
+.header__form--my-library {
+  display: none;
 }
 .search-btn {
-    position: absolute;
-    right: 20px;
-    border: 0;
-    background-color: transparent;
+  position: absolute;
+  right: 1px;
+  top: 39px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.header--my-library {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    url('../images/header-image-my-library.jpg');
+  //   display: flex;
+  //   flex-direction: column;
+  @media screen and (min-width: 768px) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/header-image-my-library-tablet.jpg');
+  }
+  @media screen and (min-width: 1024px) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/header-image-my-library-desktop.jpg');
+  }
+}
+.header__button-container {
+  display: none;
+}
+.header__button-container--my-library {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 46px;
+}
+.header__button {
+  width: 130px;
+  height: 44px;
+  margin-bottom: 65px;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 136px;
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+}
+.header__button--active {
+  background-color: $orange-color;
+  border: none;
 }

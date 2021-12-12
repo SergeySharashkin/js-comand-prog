@@ -33,8 +33,9 @@ export const renderLibraryMarkup = films => {
             <div class="list-item__content">
               <h3 class="list-item__title">${alt}</h3>
               <div class="list-item__info">
-                <p class="list-item__text">${genres} &VerticalLine; ${date}</p>
-                <span class="rating-span">${rating}</span>
+                <p class="list-item__text">${genres} &VerticalLine; ${date}
+                  &nbsp<span class="rating-span">${rating}</span>
+                </p>
               </div>
             </div>
           </a>

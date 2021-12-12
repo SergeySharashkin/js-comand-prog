@@ -20,13 +20,13 @@ const convertIdsToGenres = arrayOfIds => {
   arrayOfIds.forEach(number => {
     const genre = relevantGenresList.filter(obj => obj.id === number);
     if (!genre[0]) {
-      arrOfGenres.push('Other');
+      arrOfGenres.push('Другое');
       return;
     }
     arrOfGenres.push(genre[0].name);
   });
   if (arrOfGenres.length >= 3) {
-    arrOfGenres.splice(2, arrOfGenres.length - 2, 'Other');
+    arrOfGenres.splice(2, arrOfGenres.length - 2, 'Другое');
   }
   return arrOfGenres.join(', ');
 };

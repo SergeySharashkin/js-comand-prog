@@ -53,21 +53,30 @@ export function openInfoModal(e) {
   </div>
   <div class="modal__table-wrap">
      <h2 class="card-title">${alt}</h2>
-     <ul class="modal__list">
-  <li class="modal__list-item">
-    Vote / Votes
-    <div class="modal__list-item">
-      <span class="rating-span">${rating}</span>/<span>${count}</span>
-    </div>
-  </li>
-  <li class="modal__list-item">
-     Popularity<span class="modal__list-item_value">${popularity}</span>
-  </li> 
-  <li class="modal__list-item">
-     Original Title<span class="modal__list-item_value original-title">${original}</span>
-  </li> 
-  <li class="modal__list-item">Genres<span class="modal__list-item_value">${genres}</span></li>
+  <ul class="modal__list">
+      <li class="modal__list-item">
+       <p class="modal__text">Vote / Votes</p><span><span class="rating-span">${rating}</span>/<span>${count}</span></span>
+      </li>
+      <li class="modal__list-item">
+        <p class="modal__text">Popularity</p><span class="modal__list-item_value">${popularity}</span>
+      </li>
+      <li class="modal__list-item">
+        <p class="modal__text">Original Title</p><span class="modal__list-item_value original-title">${original}</span>
+      </li>
+      <li class="modal__list-item">
+          <p class="modal__text">Genres</p><span class="modal__list-item_value">${genres}</span>
+      </li>
  </ul>
+
+
+
+
+
+
+
+
+
+
      <div class="about">
       <h3>About</h3>
       <p class="description-card">${overview}</p>

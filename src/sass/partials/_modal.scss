@@ -89,7 +89,7 @@
   font-weight: 500;
   font-size: 20px;
   line-height: 23px;
-
+  margin-bottom: 20px;
   color: var(--text-color);
 }
 
@@ -174,31 +174,43 @@
 
 
 .modal__list-item{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
   color: var(--text-color);
+}
+.modal__list-item:not(:last-child){
+  margin-bottom: 10px;
+}
+
+.modal__text{
+  display: inline-block;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #8C8C8C;
 
 }
 
 .modal__list-item_value{
-
-
   margin-right: 40px;
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 14px;
-
-  display: contents;
   color: var(--text-color);
 }
 
 
 .original-title{
+  display: contents;
   text-transform: uppercase;
 }
 
@@ -293,4 +305,8 @@
   text-transform: uppercase;
 
   color: #ffffff;
+}
+
+.rating-span{
+
 }

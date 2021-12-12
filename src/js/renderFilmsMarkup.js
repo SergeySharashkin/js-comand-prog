@@ -1,7 +1,12 @@
 import coverImage from '../images/default_image.jpg';
 import { convertIdsToGenres } from './getGenres';
 import { refs } from './refs';
+import { Notify } from 'notiflix';
 export const renderFilmsMarkup = films => {
+  if (!films.length) {
+    Notify.failure('По Вашему запросу ничего не найдено');
+    return;
+  }
   const FilmsMarkup = films
     .map(
       ({

@@ -1,28 +1,22 @@
 import axios from 'axios';
-import { renderFilmsMarkup } from './renderFilmsMarkup';
-import { pagination } from './pagination';
-import 'tui-pagination/dist/tui-pagination.min.css';
-export let page = Number(sessionStorage.getItem('mainPage')) || 1;
-let filmCardLink = null;
+import {BASE_URL, KEY, LANGUAGE, POPULAR_FILM_FETCH, SEARCH__MOVIE } from './constants';
+let queryString = '';
 
-export const fetchFilms = async (url, query) => {
+export const fetchFilms = async ({query = '', page = 1, type = POPULAR_FILM_FETCH} = {}) => {
   try {
     if (query) {
-      const response = await axios.get(`${url}&query=${query}`);
-      const popularFilms = await response.data;
-      const { results, total_pages, page } = popularFilms;
-      let totalPages = total_pages;
-      renderFilmsMarkup(results);
-      pagination({totalPages, page, currentPage: 'main'});
-    } else {
-      const response = await axios.get(url);
-      const popularFilms = await response.data;
-      const { results, total_pages , page} = popularFilms;
-      let totalPages = total_pages;
-      renderFilmsMarkup(results);
-      pagination({totalPages, page, currentPage: 'main'});
+      queryString = query;
     }
+    if(queryString) {
+      type = SEARCH__MOVIE;
+    }
+    const response = await axios.get(`${BASE_URL}${type}?api_key=${KEY}&page=${page}&language=${LANGUAGE}&query=${queryString}`);
+    return await response.data;
   } catch (error) {
     console.log(error.message);
   }
 };
+
+export const clearQueryString = () => {
+  queryString = '';
+}

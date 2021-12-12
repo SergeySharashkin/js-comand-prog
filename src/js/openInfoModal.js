@@ -2,6 +2,9 @@ import { getTrailerUrl } from './Trailer/getTrailerUrl';
 import { refs } from './refs';
 // import { onTrailerBtnClick } from './Trailer/onTrailerBtnClick';
 import { btnState } from './btnState';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
+
 import { renderLibraryMarkup } from './library/renderLibraryMarkup';
 const { queueBtnState, watchedBtnState } = btnState;
 // import { updateLibraryRender } from './library/updateLibraryRender';
@@ -91,6 +94,8 @@ export function openInfoModal(e) {
       watchedFilms.push(currentData);
       localStorage.setItem('watchedStorage', JSON.stringify(watchedFilms));
       watchedBtn.textContent = watchedBtnState.reverse;
+      console.log('added');
+      Notify.success('Added to "Watched"');
       // updateLibraryRender(refs.showWatchedBtn, watchedFilms);
       if (
         refs.header.classList.contains('header--my-library') &&
@@ -105,6 +110,7 @@ export function openInfoModal(e) {
     const filterFilms = watchedFilms.filter(film => film.id !== currentId);
     localStorage.setItem('watchedStorage', JSON.stringify(filterFilms));
     watchedBtn.textContent = watchedBtnState.active;
+    Notify.success('Removed from "Watched"');
     // updateLibraryRender(refs.showWatchedBtn, watchedFilms);
     if (
       refs.header.classList.contains('header--my-library') &&
@@ -123,6 +129,7 @@ export function openInfoModal(e) {
       localStorage.setItem('savedStorage', JSON.stringify(savedFilms));
       console.log('savedFilms', savedFilms);
       queueBtn.textContent = queueBtnState.reverse;
+      Notify.success('Added to "Queue"');
       // updateLibraryRender(refs.showQueueBtn, savedFilms);
       if (
         refs.header.classList.contains('header--my-library') &&
@@ -136,6 +143,7 @@ export function openInfoModal(e) {
     const filterFilms = savedFilms.filter(film => film.id !== currentId);
     localStorage.setItem('savedStorage', JSON.stringify(filterFilms));
     queueBtn.textContent = queueBtnState.active;
+    Notify.success('Removed from "Queue"');
     // updateLibraryRender(refs.showQueueBtn, savedFilms);
     if (
       refs.header.classList.contains('header--my-library') &&

@@ -32,6 +32,7 @@ refs.form.addEventListener('submit', async e => {
   let searchValue = e.target.elements.search.value.trim();
   if (!searchValue) {
     Notify.warning('Query string cannot be empty');
+    return;
   }
   buildMarkup(await fetchFilms({ query: searchValue, type: SEARCH__MOVIE }));
 });

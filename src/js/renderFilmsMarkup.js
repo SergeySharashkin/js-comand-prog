@@ -2,9 +2,11 @@ import coverImage from '../images/default_image.jpg';
 import { convertIdsToGenres } from './getGenres';
 import { refs } from './refs';
 import { Notify } from 'notiflix';
+import { selectedLanguage } from './MultiLanguage/languageState';
+const { notifies } = selectedLanguage;
 export const renderFilmsMarkup = films => {
   if (!films.length) {
-    Notify.failure('По Вашему запросу ничего не найдено');
+    Notify.failure(notifies.invalidSearch);
     return;
   }
   const FilmsMarkup = films

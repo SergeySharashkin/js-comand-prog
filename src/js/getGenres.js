@@ -1,7 +1,8 @@
 import axios from 'axios';
 // import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import { BASE_URL, RELEVANT_GENRES_LIST, KEY, LANGUAGE } from './constants';
-
+import { selectedLanguage } from './MultiLanguage/languageState';
+const { other } = selectedLanguage;
 let relevantGenresList = [];
 const getRelevantGenresIds = async () => {
   try {
@@ -25,13 +26,13 @@ const convertIdsToGenres = arrayOfIds => {
   arrayOfIds.forEach(number => {
     const genre = relevantGenresList.filter(obj => obj.id === number);
     if (!genre[0]) {
-      arrOfGenres.push('Другое');
+      arrOfGenres.push(other);
       return;
     }
     arrOfGenres.push(genre[0].name);
   });
   if (arrOfGenres.length >= 3) {
-    arrOfGenres.splice(2, arrOfGenres.length - 2, 'Другое');
+    arrOfGenres.splice(2, arrOfGenres.length - 2, other);
   }
   return arrOfGenres.join(', ');
 };

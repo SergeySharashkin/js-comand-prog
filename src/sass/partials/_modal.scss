@@ -307,6 +307,16 @@
   color: #ffffff;
 }
 
-.rating-span{
+.description-card{
+  height: 236px;
+  overflow-y: scroll;
+}
 
+.description-card::-webkit-scrollbar {
+  width: 0;
+}
+
+
+.hei{
+  min-height: 100%;
 }

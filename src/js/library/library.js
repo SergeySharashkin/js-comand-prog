@@ -1,6 +1,11 @@
 import { refs } from '../refs';
 import { onLibraryBtnClick } from './onLibraryBtnClick';
 import { pagination } from '../pagination';
+import { selectedLanguage } from '../MultiLanguage/languageState';
+const { watched, queue } = selectedLanguage;
+
+refs.showWatchedBtn.textContent = watched;
+refs.showQueueBtn.textContent = queue;
 
 refs.myLibrary.addEventListener('click', () => {
   onLibraryBtnClick('watchedStorage');

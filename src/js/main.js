@@ -15,8 +15,11 @@ const { notifies } = selectedLanguage;
 // import './snow';
 
 getRelevantGenresIds();
-console.log(refs.languageSelect.value);
+if (!localStorage.getItem('language')) {
+  localStorage.setItem('language', JSON.stringify('ru'));
+}
 refs.languageSelect.value = JSON.parse(localStorage.getItem('language'));
+console.log(refs.languageSelect.value);
 
 async function onHomePageHandler(e) {
   e.preventDefault();

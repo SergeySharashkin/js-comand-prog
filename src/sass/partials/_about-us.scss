@@ -1,3 +1,62 @@
-// .js-modal-about-us {
-//   width: auto;
-// }
+.js-modal-about-us {
+  display: inline;
+  width: 1000px;
+  height: 400px;
+  position: absolute;
+  margin-left: 200px;
+  padding: 20px 20px 20px 20px;
+  box-shadow: 3px 3px red, -1em 0 0.4em olive;
+  text-align: center;
+}
+
+.about-us__visible {
+  display: none;
+  flex-direction: column;
+  width: inherit;
+  height: 400px;
+}
+
+.member-photo {
+  width: 200px;
+  height: 250px;
+  border-radius: 50%;
+}
+
+.member-photo__position {
+  // margin-left: -200px;
+  display: flex;
+}
+
+.info-about-member {
+  padding-left: 60px;
+  text-align: center;
+  width: 100%;
+  font-size: 25px;
+}
+
+.info-about-member h2 {
+  color: lightcoral;
+}
+
+.info-about-member-work {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-us-marker {
+  list-style-type: disc !important;
+}
+
+.about-us__position {
+  // display: flex;
+  // flex-direction: row;
+  padding-top: 20px;
+}
+
+.our-team {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 45px;
+}

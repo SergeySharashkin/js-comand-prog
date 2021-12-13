@@ -12,7 +12,7 @@ import './Trailer/onTrailerBtnClick';
 import './library/library';
 import './toggle-theme';
 const { notifies } = selectedLanguage;
-// import './snow';
+import './about-us';
 
 getRelevantGenresIds();
 if (!localStorage.getItem('language')) {

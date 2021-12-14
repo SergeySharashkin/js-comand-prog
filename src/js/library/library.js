@@ -1,6 +1,5 @@
 import { refs } from '../refs';
 import { onLibraryBtnClick } from './onLibraryBtnClick';
-import { pagination } from '../pagination';
 import { selectedLanguage } from '../MultiLanguage/languageState';
 const { watched, queue } = selectedLanguage;
 
@@ -24,3 +23,5 @@ refs.showQueueBtn.addEventListener('click', () => {
   sessionStorage.clear();
   sessionStorage.setItem('savedPage', '1');
 });
+
+

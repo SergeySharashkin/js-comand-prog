@@ -1,6 +1,6 @@
 import coverImage from '../../images/default_image.jpg';
 import { refs } from '../refs';
-import { genresForLibrary } from '../getGenres';
+import { genresForLibrary, genresForModal } from '../getGenres';
 import axios from 'axios';
 import { KEY, BASE_URL, LANGUAGE, SEARCH_BY_ID } from '../constants';
 
@@ -48,7 +48,7 @@ export const renderLibraryMarkup = films => {
                 data-popularity="${popularity}"
                 data-rating="${vote_average}"
                 data-count="${vote_count}"
-                data-genres="${genresForLibrary(genres)}"
+                data-genres="${genresForModal(genres)}"
                 data-date="${date}"
                 width="300px"
                 loading="lazy"

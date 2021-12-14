@@ -40,6 +40,10 @@ function genresForLibrary(genres) {
   checkGenresListLength(genresList);
   return genresList.join(', ');
 }
+function genresForModal(genres) {
+  const genresList = genres.map(({ name }) => name);
+  return genresList.join(', ');
+}
 function checkGenresListLength(genresList) {
   if (genresList.length >= 3) {
     genresList.splice(2, genresList.length - 2, other);
@@ -50,4 +54,4 @@ function checkGenresListLength(genresList) {
   return genresList;
 }
 
-export { getRelevantGenresIds, convertIdsToGenres, genresForLibrary };
+export { getRelevantGenresIds, convertIdsToGenres, genresForLibrary, genresForModal };

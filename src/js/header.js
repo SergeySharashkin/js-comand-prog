@@ -16,7 +16,6 @@ function onMyLibraryClick() {
   }
   refs.showWatchedBtn.classList.add('header__button--active');
   refs.showQueueBtn.classList.remove('header__button--active');
-  refs.languageSelect.classList.add('visually-hidden');
 }
 
 function onHomeClick() {
@@ -27,7 +26,6 @@ function onHomeClick() {
     refs.form.classList.remove('header__form--my-library');
     refs.headerBtnContainer.classList.remove('header__button-container--my-library');
   }
-  refs.languageSelect.classList.remove('visually-hidden');
 }
 
 export { onMyLibraryClick, onHomeClick };

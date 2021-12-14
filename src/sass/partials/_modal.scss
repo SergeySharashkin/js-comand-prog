@@ -5,7 +5,6 @@
 .modal {
   @media screen and (max-width: 767px) {
     max-height: 95vh;
-    overflow-y: scroll;
   }
   position: fixed;
   top: 50%;
@@ -110,9 +109,23 @@
 
 
 .info-modal-wrapper{
+    overflow-y: scroll;
+    max-height: 86vh;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
   @media screen and (min-width: 768px){
     display: flex;
     justify-content: space-evenly;
+    overflow-y: auto;
+    max-height: inherit;
+  }
+
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 0;
+    height: 0;
   }
 
 }
@@ -320,3 +333,4 @@
 .hei{
   min-height: 100%;
 }
+

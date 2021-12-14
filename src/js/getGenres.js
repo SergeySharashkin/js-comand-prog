@@ -31,10 +31,27 @@ const convertIdsToGenres = arrayOfIds => {
     }
     arrOfGenres.push(genre[0].name);
   });
-  if (arrOfGenres.length >= 3) {
-    arrOfGenres.splice(2, arrOfGenres.length - 2, other);
-  }
+  checkGenresListLength(arrOfGenres);
   return arrOfGenres.join(', ');
 };
 
-export { getRelevantGenresIds, convertIdsToGenres };
+function genresForLibrary(genres) {
+  const genresList = genres.map(({ name }) => name);
+  checkGenresListLength(genresList);
+  return genresList.join(', ');
+}
+function genresForModal(genres) {
+  const genresList = genres.map(({ name }) => name);
+  return genresList.join(', ');
+}
+function checkGenresListLength(genresList) {
+  if (genresList.length >= 3) {
+    genresList.splice(2, genresList.length - 2, other);
+  }
+  if (!genresList.length) {
+    genresList.push(other);
+  }
+  return genresList;
+}
+
+export { getRelevantGenresIds, convertIdsToGenres, genresForLibrary, genresForModal };

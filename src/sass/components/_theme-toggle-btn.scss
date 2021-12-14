@@ -1,11 +1,14 @@
 .switch {
+    
+    
     position: absolute;
-    right: 15px;
-    top: 10px;
+    margin-left: auto;
+    top: -35px;
+    right: 75px;
     display: inline-block;
     width: 55px;
     height: 30px;
-    z-index: 20;
+    // z-index: 20;
 }
 
 .switcher {
@@ -38,13 +41,13 @@
 
     transition: 0.4s;
     box-shadow: 0 0px 15px #2020203d;
-    background: white url('https://i.ibb.co/FxzBYR9/night.png');
+    background: $white-color url('https://i.ibb.co/FxzBYR9/night.png');
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .switcher:checked + .slider {
-    background-color: #f6f0ea; 
+    background-color: $white-color; 
 }
 // .switcher:focus + .slider.round:before,
 .switcher:hover + .slider.round:before {
@@ -54,7 +57,7 @@
 
 .switcher:checked + .slider:before {
     transform: translateX(24px);
-    background: rgb(255, 255, 255) url('https://i.ibb.co/7JfqXxB/sunny.png');
+    background: $white-color url('https://i.ibb.co/7JfqXxB/sunny.png');
     background-repeat: no-repeat;
     background-position: center;
 }

@@ -34,6 +34,18 @@ const convertIdsToGenres = arrayOfIds => {
   checkGenresListLength(arrOfGenres);
   return arrOfGenres.join(', ');
 };
+const popularGenresModal = arrayOfIds => {
+  let arrOfGenres = [];
+  arrayOfIds.forEach(number => {
+    const genre = relevantGenresList.filter(obj => obj.id === number);
+    if (!genre[0]) {
+      arrOfGenres.push(other);
+      return;
+    }
+    arrOfGenres.push(genre[0].name);
+  });
+  return arrOfGenres.join(', ');
+};
 
 function genresForLibrary(genres) {
   const genresList = genres.map(({ name }) => name);
@@ -54,4 +66,10 @@ function checkGenresListLength(genresList) {
   return genresList;
 }
 
-export { getRelevantGenresIds, convertIdsToGenres, genresForLibrary, genresForModal };
+export {
+  getRelevantGenresIds,
+  convertIdsToGenres,
+  genresForLibrary,
+  genresForModal,
+  popularGenresModal,
+};

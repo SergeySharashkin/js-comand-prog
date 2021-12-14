@@ -18,6 +18,9 @@
       url('../images/header-image-home-desktop.jpg');
   }
 }
+.buttons-wrapper {
+  position: relative;
+}
 .header__links-container {
   display: flex;
   align-items: baseline;

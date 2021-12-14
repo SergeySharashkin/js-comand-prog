@@ -1,69 +1,90 @@
+import './library/library';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { getRelevantGenresIds } from './getGenres';
+import { checkState } from './checkState';
 import { fetchFilms, clearQueryString } from './fetchFilms';
 import { refs } from './refs';
 import { KEY, BASE_URL, POPULAR_FILM_FETCH, SEARCH__MOVIE, LANGUAGE } from './constants';
 import { openInfoModal } from './openInfoModal';
 import { onMyLibraryClick, onHomeClick } from './header';
+import { onLibraryBtnClick } from './library/onLibraryBtnClick';
 import { pagination } from './pagination';
 import { renderFilmsMarkup } from './renderFilmsMarkup';
+import { renderLibraryMarkup } from './library/renderLibraryMarkup';
+import { selectedLanguage } from './MultiLanguage/languageState';
+import { getSelectedLanguage } from './getSelectedLanguage';
 import './Trailer/onTrailerBtnClick';
 import './library/library';
 import './toggle-theme';
-
+const { notifies } = selectedLanguage;
 // import './snow';
 
 getRelevantGenresIds();
+getSelectedLanguage();
 
 async function onHomePageHandler(e) {
   e.preventDefault();
   clearQueryString();
   refs.form.reset();
-  sessionStorage.removeItem('mainPage');
+  sessionStorage.clear();
   buildMarkup(await fetchFilms({ page: 1 }));
 }
 
 refs.homeLink.addEventListener('click', onHomePageHandler);
 refs.homeLogo.addEventListener('click', onHomePageHandler);
+// refs.languageSelect.addEventListener('change', location.reload());
 
 refs.form.addEventListener('submit', async e => {
   e.preventDefault();
-  sessionStorage.removeItem('mainPage');
+  sessionStorage.clear();
   let searchValue = e.target.elements.search.value.trim();
   if (!searchValue) {
-    Notify.warning('Query string cannot be empty');
+    Notify.warning(notifies.emptySearch);
     return;
   }
+  sessionStorage.setItem('query', searchValue);
   buildMarkup(await fetchFilms({ query: searchValue, type: SEARCH__MOVIE }));
 });
 
+// function modalIsOpen() {
+//
+//   e.preventDefault();
+//   if (e.target.nodeName !== 'IMG') {
+//     return;
+//   }
+//   const filmId = e.target.dataset.id;
+//   openInfoModal(e);
+// }
+
+
+
 refs.container.addEventListener('click', e => {
+
   e.preventDefault();
   if (e.target.nodeName !== 'IMG') {
     return;
   }
   const filmId = e.target.dataset.id;
   openInfoModal(e);
+
 });
+
+refs.container.removeEventListener('click', e => {
+
+  e.preventDefault();
+  if (e.target.nodeName !== 'IMG') {
+    return;
+  }
+  const filmId = e.target.dataset.id;
+  openInfoModal(e);
+
+})
 
 refs.myLibrary.addEventListener('click', onMyLibraryClick);
 refs.homeLink.addEventListener('click', onHomeClick);
 refs.homeLogo.addEventListener('click', onHomeClick);
 
-refs.showWatchedBtn.addEventListener('click', e => {
-  if (!refs.showWatchedBtn.classList.contains('header__button--active')) {
-    refs.showWatchedBtn.classList.add('header__button--active');
-    refs.showQueueBtn.classList.remove('header__button--active');
-  }
-});
-refs.showQueueBtn.addEventListener('click', e => {
-  if (refs.showWatchedBtn.classList.contains('header__button--active')) {
-    refs.showWatchedBtn.classList.remove('header__button--active');
-    refs.showQueueBtn.classList.add('header__button--active');
-  }
-});
-
-function buildMarkup({ results, total_results, page }) {
+export function buildMarkup({ results, total_results, page }) {
   renderFilmsMarkup(results);
   pagination({ totalItems: total_results, page }, onClickPagePagination);
 }
@@ -74,6 +95,5 @@ async function onClickPagePagination(eventData) {
 }
 
 (async function () {
-  let page = Number(sessionStorage.getItem('mainPage')) || 1;
-  buildMarkup(await fetchFilms({ page }));
+  checkState();
 })();

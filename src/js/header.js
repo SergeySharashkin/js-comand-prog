@@ -1,4 +1,10 @@
 import { refs } from './refs';
+import { selectedLanguage } from './MultiLanguage/languageState';
+const { home, library, placeholder } = selectedLanguage;
+
+refs.input.placeholder = placeholder;
+refs.homeLink.textContent = home;
+refs.myLibrary.textContent = library;
 
 function onMyLibraryClick() {
   if (!refs.header.classList.contains('header--my-library')) {

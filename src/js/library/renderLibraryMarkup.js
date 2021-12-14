@@ -1,6 +1,6 @@
 import coverImage from '../../images/default_image.jpg';
 import { refs } from '../refs';
-import { convertIdsToGenres } from '../getGenres';
+import { genresForLibrary } from '../getGenres';
 import axios from 'axios';
 import { KEY, BASE_URL, LANGUAGE, SEARCH_BY_ID } from '../constants';
 
@@ -48,7 +48,7 @@ export const renderLibraryMarkup = films => {
                 data-popularity="${popularity}"
                 data-rating="${vote_average}"
                 data-count="${vote_count}"
-                data-genres="${convertIdsToGenres(genres)}"
+                data-genres="${genresForLibrary(genres)}"
                 data-date="${date}"
                 width="300px"
                 loading="lazy"
@@ -57,7 +57,7 @@ export const renderLibraryMarkup = films => {
                 <div class="list-item__content">
                   <h3 class="list-item__title">${title}</h3>
                   <div class="list-item__info">
-                    <p class="list-item__text">${convertIdsToGenres(genres)} &VerticalLine; ${date}
+                    <p class="list-item__text">${genresForLibrary(genres)} &VerticalLine; ${date}
                       &nbsp<span class="rating-span">${vote_average}</span>
                     </p>
                   </div>

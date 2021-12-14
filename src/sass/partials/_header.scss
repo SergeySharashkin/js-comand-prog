@@ -2,7 +2,7 @@
   margin: 0 auto;
   // height: 230px;
   // max-width: 320px;
-
+  width: 100%;
   padding: 46px 0 0 0;
   background-size: cover;
   background-repeat: no-repeat;
@@ -23,7 +23,7 @@
 }
 .header__links-container {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   // max-width: 320px;
   // //   background-color: green;
   //   @media screen and (min-width: 768px) {

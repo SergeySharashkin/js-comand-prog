@@ -17,6 +17,15 @@ export const fetchFilms = async ({ query = '', page = 1, type = POPULAR_FILM_FET
     const response = await axios.get(
       `${BASE_URL}${type}?api_key=${KEY}&page=${page}&language=${LANGUAGE}&query=${queryString}`,
     );
+
+    if(response.data.results.length === 0) {
+      type = POPULAR_FILM_FETCH;
+      const response = await axios.get(
+        `${BASE_URL}${type}?api_key=${KEY}&page=${page}&language=${LANGUAGE}&query=${queryString}`,
+      );
+      Loading.remove();
+      return response.data;
+    }
     Loading.remove();
     return await response.data;
   } catch (error) {

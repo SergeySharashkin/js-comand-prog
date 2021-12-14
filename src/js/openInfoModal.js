@@ -22,6 +22,7 @@ let savedFilms = [];
 let watchedFilms = [];
 
 export function openInfoModal(e) {
+  console.log(e)
   refs.modal.classList.add('is-shown');
   refs.modalOverlay.classList.add('is-shown');
   document.body.classList.add('body-hidden');
@@ -58,7 +59,7 @@ export function openInfoModal(e) {
       : (queueBtnTextContent = queueBtnState.active);
   }
   currentData = data;
-  console.log('currentData', currentData);
+  // console.log('currentData', currentData);
   const infoModalContent = `     <div class="modal__card-img">
     <img src="${url}" alt="${alt}" class="modal__img" />
   </div>
@@ -75,7 +76,9 @@ export function openInfoModal(e) {
         <p class="modal__text">${langOriginal}</p><span class="modal__list-item_value original-title">${original}</span>
       </li>
       <li class="modal__list-item">
+
           <p class="modal__text">${langGenres}</p><span class="modal__list-item_value">${genres}</span>
+
       </li>
  </ul>
 
@@ -164,6 +167,8 @@ export function openInfoModal(e) {
 }
 refs.modalClose.addEventListener('click', onModalClose);
 refs.modalOverlay.addEventListener('click', onModalClose);
+
+
 
 function onModalClose() {
   refs.modalClose.parentNode.classList.remove('is-shown');

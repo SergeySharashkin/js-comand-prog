@@ -1,69 +1,67 @@
 .switch {
-    position: absolute;
-    right: 15px;
-    top: 10px;
-    display: inline-block;
-    width: 55px;
-    height: 30px;
-    z-index: 30;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  display: inline-block;
+  width: 55px;
+  height: 30px;
+  z-index: 20;
 }
 
 .switcher {
-    opacity: 0;
-    width: 0;
-    height: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgb(218, 172, 88);
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--accent-color);
 
-    transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
-    position: absolute;
-    content: "";
-    height: 40px;
-    width: 40px;
-    left: 0px;
-    bottom: 4px;
-    top: 0;
-    bottom: 0;
-    margin: auto 0;
+  position: absolute;
+  content: '';
+  height: 40px;
+  width: 40px;
+  left: 0px;
+  bottom: 4px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
 
-    transition: 0.4s;
-    box-shadow: 0 0px 15px #2020203d;
-    background: white url('https://i.ibb.co/FxzBYR9/night.png');
-    background-repeat: no-repeat;
-    background-position: center;
+  transition: 0.4s;
+  box-shadow: 0 0px 15px #2020203d;
+  background: white url('https://i.ibb.co/FxzBYR9/night.png');
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .switcher:checked + .slider {
-    background-color: #f6f0ea; 
+  background-color: #f6f0ea;
 }
 // .switcher:focus + .slider.round:before,
 .switcher:hover + .slider.round:before {
-    box-shadow: 0 0 5px 5px var(--accent-color);
+  box-shadow: 0 0 5px 5px var(--accent-color);
 }
 
-
 .switcher:checked + .slider:before {
-    transform: translateX(24px);
-    background: rgb(255, 255, 255) url('https://i.ibb.co/7JfqXxB/sunny.png');
-    background-repeat: no-repeat;
-    background-position: center;
+  transform: translateX(24px);
+  background: rgb(255, 255, 255) url('https://i.ibb.co/7JfqXxB/sunny.png');
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .slider.round {
-    border-radius: 34px;
+  border-radius: 34px;
 }
 
 .slider.round:before {
-    border-radius: 50%;
-    
+  border-radius: 50%;
 }

@@ -1,10 +1,21 @@
 import { getTrailerUrl } from './Trailer/getTrailerUrl';
 import { refs } from './refs';
-// import { onTrailerBtnClick } from './Trailer/onTrailerBtnClick';
-import { btnState } from './btnState';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
 import { renderLibraryMarkup } from './library/renderLibraryMarkup';
-const { queueBtnState, watchedBtnState } = btnState;
 // import { updateLibraryRender } from './library/updateLibraryRender';
+import { selectedLanguage } from './MultiLanguage/languageState';
+const {
+  langAbout,
+  langGenres,
+  langOriginal,
+  langPopularity,
+  langVote,
+  notifies,
+  watchedBtnState,
+  queueBtnState,
+} = selectedLanguage;
+
 let currentId = 0;
 let currentData = {};
 let savedFilms = [];
@@ -56,21 +67,23 @@ export function openInfoModal(e) {
      <h2 class="card-title">${alt}</h2>
   <ul class="modal__list">
       <li class="modal__list-item">
-       <p class="modal__text">Vote / Votes</p><span><span class="rating-span">${rating}</span>/<span>${count}</span></span>
+       <p class="modal__text">${langVote}</p><span><span class="rating-span">${rating}</span>/<span>${count}</span></span>
       </li>
       <li class="modal__list-item">
-        <p class="modal__text">Popularity</p><span class="modal__list-item_value">${popularity}</span>
+        <p class="modal__text">${langPopularity}</p><span class="modal__list-item_value">${popularity}</span>
       </li>
       <li class="modal__list-item">
-        <p class="modal__text">Original Title</p><span class="modal__list-item_value original-title">${original}</span>
+        <p class="modal__text">${langOriginal}</p><span class="modal__list-item_value original-title">${original}</span>
       </li>
       <li class="modal__list-item">
-          <p class="modal__text">Genres</p><span class="modal__list-item_value capitalize">${genres}</span>
+
+          <p class="modal__text">${langGenres}</p><span class="modal__list-item_value">${genres}</span>
+
       </li>
  </ul>
 
      <div class="about">
-      <h3>About</h3>
+      <h3>${langAbout}</h3>
       <p class="description-card">${overview}</p>
     </div>
     <div class="modal-add-btns">
@@ -92,6 +105,8 @@ export function openInfoModal(e) {
       watchedFilms.push(currentData);
       localStorage.setItem('watchedStorage', JSON.stringify(watchedFilms));
       watchedBtn.textContent = watchedBtnState.reverse;
+      console.log('added');
+      Notify.success(notifies.addedToWatched);
       // updateLibraryRender(refs.showWatchedBtn, watchedFilms);
       if (
         refs.header.classList.contains('header--my-library') &&
@@ -106,6 +121,7 @@ export function openInfoModal(e) {
     const filterFilms = watchedFilms.filter(film => film.id !== currentId);
     localStorage.setItem('watchedStorage', JSON.stringify(filterFilms));
     watchedBtn.textContent = watchedBtnState.active;
+    Notify.success(notifies.removedFromWatched);
     // updateLibraryRender(refs.showWatchedBtn, watchedFilms);
     if (
       refs.header.classList.contains('header--my-library') &&
@@ -124,6 +140,7 @@ export function openInfoModal(e) {
       localStorage.setItem('savedStorage', JSON.stringify(savedFilms));
       console.log('savedFilms', savedFilms);
       queueBtn.textContent = queueBtnState.reverse;
+      Notify.success(notifies.addedToQueue);
       // updateLibraryRender(refs.showQueueBtn, savedFilms);
       if (
         refs.header.classList.contains('header--my-library') &&
@@ -137,6 +154,7 @@ export function openInfoModal(e) {
     const filterFilms = savedFilms.filter(film => film.id !== currentId);
     localStorage.setItem('savedStorage', JSON.stringify(filterFilms));
     queueBtn.textContent = queueBtnState.active;
+    Notify.success(notifies.removedFromQueue);
     // updateLibraryRender(refs.showQueueBtn, savedFilms);
     if (
       refs.header.classList.contains('header--my-library') &&

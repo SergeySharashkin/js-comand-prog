@@ -2,22 +2,24 @@
   margin: 0 auto;
   // height: 230px;
   // max-width: 320px;
+
   padding: 46px 0 0 0;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
     url('../images/header-image-home.jpg');
-  //   display: flex;
-  //   flex-direction: column;
   @media screen and (min-width: 768px) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-    url('../images/header-image-home-tablet.jpg');
+      url('../images/header-image-home-tablet.jpg');
   }
   @media screen and (min-width: 1024px) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-    url('../images/header-image-home-desktop.jpg');
+      url('../images/header-image-home-desktop.jpg');
   }
+}
+.buttons-wrapper {
+  position: relative;
 }
 .header__links-container {
   display: flex;
@@ -32,9 +34,9 @@
   // }
 }
 .header__links {
-    display: flex;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  margin: 0;
+  padding: 0;
 }
 .header__logo {
   text-decoration: none;
@@ -46,29 +48,28 @@
   //   padding: 0 71px;
   //   max-width: 1024px;
   // }
-
 }
 .logo__text {
   font-family: Roboto;
-font-style: normal;
-font-weight: 500;
-font-size: 30px;
-line-height: 35px;
-color: #ffffff;
-margin-left: 10px;
-@media screen and (max-width: 767px) {
-  display: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 35px;
+  color: #ffffff;
+  margin-left: 10px;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
 }
-
-}
-.header__home-link, .header__my-library-link {
+.header__home-link,
+.header__my-library-link {
   position: relative;
 
-    font-weight: 500;
-    text-decoration: none;
-    text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: uppercase;
 
-color: #FFFFFF;
+  color: #ffffff;
 }
 .header__link--active::after {
   content: '';
@@ -85,7 +86,7 @@ color: #FFFFFF;
   // }
 }
 .header__home-link {
-    margin-right: 39px;
+  margin-right: 39px;
 }
 .header__logo {
   margin-right: auto;
@@ -93,7 +94,7 @@ color: #FFFFFF;
 
 .logo__text {
   display: none;
-  @media screen and (min-width:768px) {
+  @media screen and (min-width: 768px) {
     display: flex;
   }
 }
@@ -104,11 +105,9 @@ color: #FFFFFF;
 
   width: 100%;
   max-width: 336px;
-    position: relative;
-
+  position: relative;
 }
 .header__input {
-
   width: 100%;
 
   border-top: 0;
@@ -128,12 +127,12 @@ color: #FFFFFF;
   }
 }
 .header__input::placeholder {
-    color: #FFFFFF;
-    font-size: 16px;
-    font-family: $font;
-    @media screen and (min-width:768px) {
-      font-size: 14px;
-    }
+  color: #ffffff;
+  font-size: 16px;
+  font-family: $font;
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+  }
 }
 .header__form {
   display: flex;
@@ -143,17 +142,15 @@ color: #FFFFFF;
   display: none;
 }
 .search-btn {
-    position: absolute;
-    right: 1px;
-    top: 39px;
-    padding: 0;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
+  position: absolute;
+  right: 1px;
+  top: 39px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
-// .header__button {
-//   display: none;
-// }
+
 .header--my-library {
   background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
     url('../images/header-image-my-library.jpg');
@@ -161,11 +158,11 @@ color: #FFFFFF;
   //   flex-direction: column;
   @media screen and (min-width: 768px) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-    url('../images/header-image-my-library-tablet.jpg');
+      url('../images/header-image-my-library-tablet.jpg');
   }
   @media screen and (min-width: 1024px) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-    url('../images/header-image-my-library-desktop.jpg');
+      url('../images/header-image-my-library-desktop.jpg');
   }
 }
 .header__button-container {
@@ -187,16 +184,16 @@ color: #FFFFFF;
   text-transform: uppercase;
   color: #ffffff;
   font-weight: 500;
-font-size: 12px;
-line-height: 16px;
+  font-size: 12px;
+  line-height: 16px;
   &:not(:last-child) {
     margin-right: 20px;
   }
-  @media screen and (min-width:768px) {
-  width: 136px;
-  &:not(:last-child) {
-    margin-right: 15px;
-  }
+  @media screen and (min-width: 768px) {
+    width: 136px;
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
   }
 }
 .header__button--active {

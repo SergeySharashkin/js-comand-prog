@@ -37,14 +37,39 @@ refs.form.addEventListener('submit', async e => {
   buildMarkup(await fetchFilms({ query: searchValue, type: SEARCH__MOVIE }));
 });
 
+// function modalIsOpen() {
+//
+//   e.preventDefault();
+//   if (e.target.nodeName !== 'IMG') {
+//     return;
+//   }
+//   const filmId = e.target.dataset.id;
+//   openInfoModal(e);
+// }
+
+
+
 refs.container.addEventListener('click', e => {
+
   e.preventDefault();
   if (e.target.nodeName !== 'IMG') {
     return;
   }
   const filmId = e.target.dataset.id;
   openInfoModal(e);
+
 });
+
+refs.container.removeEventListener('click', e => {
+
+  e.preventDefault();
+  if (e.target.nodeName !== 'IMG') {
+    return;
+  }
+  const filmId = e.target.dataset.id;
+  openInfoModal(e);
+
+})
 
 refs.myLibrary.addEventListener('click', onMyLibraryClick);
 refs.homeLink.addEventListener('click', onHomeClick);

@@ -31,4 +31,5 @@ export const refs = {
   tuiContainer: document.getElementById('tui-pagination-container'),
 
   filmCardLink: null,
+  languageSelect: document.querySelector('.language-select'),
 };

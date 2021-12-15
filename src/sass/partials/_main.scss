@@ -5,7 +5,10 @@
   background-color: var(--main-background-color);
   transition: var(--transition-delay);
 }
-
+main {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
 // =============== Film-cards-styles =============//
 
 .film-list {
@@ -20,7 +23,7 @@
       margin-top: -30px;
       margin-left: -30px;
   }
-    
+
 }
   .film-list__item:not(:last-child) {
   @media screen and(max-width: 767px){
@@ -47,7 +50,7 @@
   @media screen and(min-width: 1440px) {
       flex-basis: calc((100% - 120px) / 4);
   }
-  
+
 }
 
 // .film-list__item-rating {
@@ -73,7 +76,7 @@
     box-shadow: 0px 0px 10px 5px var(--accent-color);
     border-radius: 5px;
   }
-  
+
 }
 
 .list-item__link::after {
@@ -94,9 +97,9 @@
 .dark .list-item__link:hover::after {
   display: block;
   animation: animate 5000ms linear infinite;
-  
+
   box-shadow: 0px 0px 15px 5px #ec640a;
-      
+
 }
 
 @keyframes animate {
@@ -123,7 +126,7 @@
   transform: scale(1);
   transition: transform 500ms ease-out;
   object-fit: fill;
-  
+
   &:hover,
   &:focus {
     transform: scale(1.1);
@@ -134,20 +137,25 @@
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 5px;
-  
+
   font-weight: 500;
   font-size: 12px;
   line-height: 1.17;
-  text-transform: uppercase;
-  
+
   color: var(--text-color);
+}
+
+.list-item__title {
+
+  text-transform: uppercase;
 }
 
 .list-item__text {
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
-  
+  text-transform: capitalize;
+
   color: var(--accent-color);
 }
 

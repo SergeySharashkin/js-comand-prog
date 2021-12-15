@@ -2,6 +2,8 @@ import axios from 'axios';
 import { BASE_URL, KEY, LANGUAGE } from '../constants';
 import { refs } from '../refs';
 import { onTrailerBtnClick } from './onTrailerBtnClick';
+import { selectedLanguage } from '../MultiLanguage/languageState';
+const { trailerBtn } = selectedLanguage;
 
 export const getTrailerUrl = async id => {
   try {
@@ -20,7 +22,7 @@ export const getTrailerUrl = async id => {
     openTrailerBtn.setAttribute('data-trailer', `${results[0].key}`);
     openTrailerBtn.classList.add('add-btn', 'trailer-btn');
 
-    openTrailerBtn.textContent = 'Trailer';
+    openTrailerBtn.textContent = trailerBtn;
     modalAddBtns.prepend(openTrailerBtn);
     refs.openTrailerBtn = document.querySelector('.trailer-btn');
     refs.openTrailerBtn.addEventListener('click', onTrailerBtnClick);

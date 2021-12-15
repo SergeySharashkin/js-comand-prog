@@ -1,7 +1,14 @@
 import coverImage from '../images/default_image.jpg';
-import { convertIdsToGenres } from './getGenres';
+import { convertIdsToGenres, popularGenresModal } from './getGenres';
 import { refs } from './refs';
+import { Notify } from 'notiflix';
+import { selectedLanguage } from './MultiLanguage/languageState';
+const { notifies } = selectedLanguage;
 export const renderFilmsMarkup = films => {
+  if (!films.length) {
+    Notify.failure(notifies.invalidSearch);
+    return;
+  }
   const FilmsMarkup = films
     .map(
       ({
@@ -38,7 +45,7 @@ export const renderFilmsMarkup = films => {
               data-popularity="${popularity}"
               data-rating="${vote_average}"
               data-count="${vote_count}"
-              data-genres="${convertIdsToGenres(genre_ids)}"
+              data-genres="${popularGenresModal(genre_ids)}"
               data-date="${date}"
               width="300px"
               loading="lazy"

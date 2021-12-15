@@ -1,5 +1,23 @@
 <header class="header">
   <div class="wrapper">
+    <div class="buttons-wrapper">
+
+      <select
+        class="language-select"
+        name="language"
+        onchange="localStorage.setItem('language', JSON.stringify(`${this.options[this.selectedIndex].value}`));location.reload()"
+      >
+        <option value="ru">Ru</option>
+        <option value="en">En</option>
+        <option value="uk">Uk</option>
+      </select>
+      
+      <label id="switch" class="switch">
+      <input class="switcher" type="checkbox" id="slider" checked />
+        <span class="slider round"></span>
+      </label>
+    </div>
+
     <div class="header__links-container">
       <a href="#" class="header__logo">
         <svg class="logo__image" width="24" height="24">
@@ -34,9 +52,6 @@
       <button class="header__button show-queue-btn" type="button">Queue</button>
     </div>
 
-    <label id="switch" class="switch">
-      <input class="switcher" type="checkbox" id="slider" checked>
-      <span class="slider round"></span>
-  </label>
+    
   </div>
 </header>

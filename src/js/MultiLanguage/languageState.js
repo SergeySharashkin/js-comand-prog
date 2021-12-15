@@ -16,6 +16,7 @@ const languages = [
     notifies: {
       invalidSearch: 'Search result not successful. Enter the correct movie name',
       emptySearch: 'Query string cannot be empty',
+      emptyLib: 'You have not added anything here',
       emptyWatchedLib: 'There are no films in "Watched" yet',
       emptyQueueLib: 'There are no films in "Queue" yet',
       addedToWatched: 'Added to "Watched"',
@@ -50,6 +51,7 @@ const languages = [
     notifies: {
       invalidSearch: 'Ничего не найдено по Вашему запросу',
       emptySearch: 'Поиск по пустой строке невозможен',
+      emptyLib: 'Вы еще ничего сюда не добавили',
       emptyWatchedLib: 'Вы еще не добавили фильмы в "Просмотренные"',
       emptyQueueLib: 'Вы еще не добавили фильмы в "Очередь"',
       addedToWatched: 'Фильм добавлен в "Просмотренные"',
@@ -84,6 +86,7 @@ const languages = [
     notifies: {
       invalidSearch: 'За Вашим запитом нічого не знайдено',
       emptySearch: 'Рядок пошуку не може бути порожнім',
+      emptyLib: 'Ви ще нічого сюди не додали',
       emptyWatchedLib: 'Ви ще не додали фільми до "Переглянутих"',
       emptyQueueLib: 'Ви ще не додали фільми до "Черги"',
       addedToWatched: 'Фільм додано до "Переглянутих"',

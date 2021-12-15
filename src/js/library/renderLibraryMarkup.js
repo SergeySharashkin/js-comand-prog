@@ -3,10 +3,16 @@ import { refs } from '../refs';
 import { genresForLibrary, genresForModal } from '../getGenres';
 import axios from 'axios';
 import { KEY, BASE_URL, LANGUAGE, SEARCH_BY_ID } from '../constants';
+import { Notify } from 'notiflix';
+import { selectedLanguage } from '../MultiLanguage/languageState';
+const {
+  notifies: { emptyLib },
+} = selectedLanguage;
 
 export const renderLibraryMarkup = films => {
   if (!films.length) {
     refs.container.innerHTML = '';
+    Notify.info(emptyLib);
     return;
   }
   films.map(({ id }) => {

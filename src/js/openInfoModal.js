@@ -21,6 +21,8 @@ let currentData = {};
 let savedFilms = [];
 let watchedFilms = [];
 
+
+
 export function openInfoModal(e) {
   console.log(e)
   refs.modal.classList.add('is-shown');
@@ -67,7 +69,9 @@ export function openInfoModal(e) {
      <h2 class="card-title">${alt}</h2>
   <ul class="modal__list">
       <li class="modal__list-item">
-       <p class="modal__text">${langVote}</p><span><span class="rating-span">${rating}</span>/<span>${count}</span></span>
+
+       <p class="modal__text">Vote / Votes</p><span><span class="rating-span">${rating}</span>/<span class="rating-count">${count}</span></span>
+
       </li>
       <li class="modal__list-item">
         <p class="modal__text">${langPopularity}</p><span class="modal__list-item_value">${popularity}</span>
@@ -106,7 +110,7 @@ export function openInfoModal(e) {
       localStorage.setItem('watchedStorage', JSON.stringify(watchedFilms));
       watchedBtn.textContent = watchedBtnState.reverse;
       console.log('added');
-      Notify.success(notifies.addedToWatched);
+      Notify.success(notifies.addedToWatched, {timeout: 1500});
       // updateLibraryRender(refs.showWatchedBtn, watchedFilms);
       if (
         refs.header.classList.contains('header--my-library') &&
@@ -121,7 +125,7 @@ export function openInfoModal(e) {
     const filterFilms = watchedFilms.filter(film => film.id !== currentId);
     localStorage.setItem('watchedStorage', JSON.stringify(filterFilms));
     watchedBtn.textContent = watchedBtnState.active;
-    Notify.success(notifies.removedFromWatched);
+    Notify.success(notifies.removedFromWatched, {timeout: 1500});
     // updateLibraryRender(refs.showWatchedBtn, watchedFilms);
     if (
       refs.header.classList.contains('header--my-library') &&
@@ -140,7 +144,7 @@ export function openInfoModal(e) {
       localStorage.setItem('savedStorage', JSON.stringify(savedFilms));
       console.log('savedFilms', savedFilms);
       queueBtn.textContent = queueBtnState.reverse;
-      Notify.success(notifies.addedToQueue);
+      Notify.success(notifies.addedToQueue, {timeout: 1500});
       // updateLibraryRender(refs.showQueueBtn, savedFilms);
       if (
         refs.header.classList.contains('header--my-library') &&
@@ -154,7 +158,7 @@ export function openInfoModal(e) {
     const filterFilms = savedFilms.filter(film => film.id !== currentId);
     localStorage.setItem('savedStorage', JSON.stringify(filterFilms));
     queueBtn.textContent = queueBtnState.active;
-    Notify.success(notifies.removedFromQueue);
+    Notify.success(notifies.removedFromQueue, {timeout: 1500});
     // updateLibraryRender(refs.showQueueBtn, savedFilms);
     if (
       refs.header.classList.contains('header--my-library') &&

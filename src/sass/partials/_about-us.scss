@@ -4,7 +4,7 @@
 
 .swiper-position {
   width: 800px;
-  height: 320px;
+  height: 800px;
   position: fixed;
   top: 25%;
   left: 25%;
@@ -29,6 +29,9 @@
 
 .member-photo {
   border-radius: 600px;
+  position: relative;
+  width: 200px;
+  height: 200px;
 }
 
 .swiper-background {
@@ -51,12 +54,14 @@
 .member-info-position h3 {
   padding-left: 50px;
   font-size: 25px;
+  width: 500px;
 }
 
 .info-about-member-work {
   position: relative;
   top: 40px;
-  right: 105px;
+  right: 210px;
+  width: 650px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;

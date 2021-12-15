@@ -18,12 +18,11 @@ export function pagination({ totalItems, page }, onClickPagePagination) {
   });
   instance.on('beforeMove', onClickPagePagination);
   slowScroll();
-  if(refs.container.children.length < 20) {
+  if (refs.container.children.length < 20) {
     console.log(refs.container.children.length);
     refs.tuiContainer.style.display = 'none';
   } else {
     refs.tuiContainer.style.display = 'flex';
-
   }
 }
 

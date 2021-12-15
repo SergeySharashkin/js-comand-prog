@@ -147,9 +147,11 @@
   width: 20px;
   height: 20px;
   cursor: pointer;
-
-  border-radius: 5px;
-
+}
+  
+  .dark .close-cross {
+    fill: $white-color;
+  }
 
 
 .modal__table-wrap {
@@ -332,6 +334,10 @@
 .rating-count{
   margin-left: 3px;
   background-color: #F7F7F7;
+  padding: 0 10px;
+  color: $black-color;
   border-radius: 5px;
 }
+
+
 

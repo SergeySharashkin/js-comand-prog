@@ -1,105 +1,43 @@
-<!-- <div id="about-us" class="about-us__visible">
-    <div class="js-modal-about-us gallery">
-        <h1 class="our-team">Работа нашей команды</h1>
-        <ul class="about-us__position">
-            <li class="member-photo__position">
-                <a href="./images/member_logo.jpg"><img class="member-photo" src="./images/member_logo.jpg"
-                            alt="AlexNumo" /></a>
-                <div class="info-about-member">
-                    <h2>AlexNumo</h2>
-                    <ul class="info-about-member-work">
-                        <li class="about-us-marker"><p>Падающий снег</p></li>
-                        <li class="about-us-marker"><p>Секция о нас</p></li></ul>
-                </div>
-            </li>
-        </ul>
-    </div>
-</div> -->
-
-
-<!-- Trigger/Open The Modal -->
-<!-- <button id="myBtn">Open Modal</button> -->
-
-
-
-<!-- The Modal -->
-<!-- <div id="myModal" class="modal"> -->
-
-    <!-- Modal content -->
-    <!-- <div class="modal-content">
-        <div class="modal-header">
-            <span class="close">&times;</span>
-            <h2>Работа нашей команды</h2>
-        </div>
-        <div class="modal-body">
-            <a class='btn btn-primary' href="#"><img class="member-photo" src="./images/member_logo.jpg" alt="AlexNumo" /></a>
-            <div class="member-info-position">
-                <h3>AlexNumo</h3>
-                <ul class="info-about-member-work">
-                    <li class="about-us-marker">
-                        <p>Падающий снег</p>
-                    </li>
-                    <li class="about-us-marker">
-                        <p>Работа нашей команды</p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="modal-footer">
-            <a class="btn btn-primary alex-numo" href='#'><img class="member-photo-icon" src='./images/member_logo.jpg'></a>
-            <a class="btn btn-primary sergyi" href='#'><img class="member-photo-icon" src='./images/member_logo.jpg'></a>
-        </div>
-    </div> 
-    </div>  -->
-    <!-- style="pointer-events: none" -->
-
-<!-- </div> -->
-
-
-<!-- <div class="gallery">
-    <button type="button" id="myButton"></button>
-    <a href="./images/member_logo.jpg"><img src="./images/member_logo.jpg" width="10%" height="10%" alt="AlexNumo" title="AlexNumo - падающий снег, секция наша команда" /></a>
-    <a href="./images/member_logo.jpg"><img src="./images/member_logo.jpg" width="10%" height="10%" alt="Sergyi" title="Beautiful Image" /></a>
-    <a href="./images/member_logo.jpg"><img src="./images/member_logo.jpg" width="10%" height="10%" alt="Sergyi" title="Beautiful Image" /></a>
-    <a href="./images/member_logo.jpg"><img src="./images/member_logo.jpg" width="10%" height="10%" alt="Sergyi" title="Beautiful Image" /></a>
-</div> -->
-
 <!-- Slider main container -->
-<div class="swiper" style="display: none;">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide swiper-background">
-            <h2>Работа нашей команды</h2>
-            <div class="member-info-position">
-                <img class="member-photo" src="./images/member_logo.jpg" width="20%" height="20%" alt="AlexNumo"/>
-                <h3>AlexNumo</h3>
+<div class="swiper-position swiper-background swiper-anime" style="display: none;">
+    <h2>Работа нашей команды</h2>
+    <svg class="close-cross js-swiper-close" alt="img">
+        <use href="./images/icons.svg#icon-Vector"></use>
+    </svg>
+    <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <div class="member-info-position">
+                    <img class="member-photo" src="./images/member_logo.jpg" width="20%" height="20%" alt="AlexNumo"/>
+                    <h3>AlexNumo</h3>
+                        <ul class="info-about-member-work">
+                            <li class="about-us-marker">Падающий снег</li>
+                            <li class="about-us-marker">Секция "Работа нашей команды"</li>
+                        </ul>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="member-info-position">
+                    <img class="member-photo" src="./images/member_logo.jpg" width="20%" height="20%" alt="AlexNumo" />
+                    <h3>Sergyi</h3>
                     <ul class="info-about-member-work">
                         <li class="about-us-marker">Падающий снег</li>
                         <li class="about-us-marker">Секция работа нашей команды</li>
                     </ul>
-            </div>
-        </div>
-        <div class="swiper-slide swiper-background">
-            <h2>Работа нашей команды</h2>
-            <div class="member-info-position">
-                <img class="member-photo" src="./images/member_logo.jpg" width="20%" height="20%" alt="AlexNumo" />
-                <h3>Sergyi</h3>
-                <ul class="info-about-member-work">
-                    <li class="about-us-marker">Падающий снег</li>
-                    <li class="about-us-marker">Секция работа нашей команды</li>
-                </ul>
-            </div>
+                </div>
 
+            </div>
         </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
     </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
-
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-
-    <!-- If we need scrollbar -->
-    <div class="swiper-scrollbar"></div>
 </div>

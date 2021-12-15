@@ -95,5 +95,5 @@ async function onClickPagePagination(eventData) {
 }
 
 (async function () {
-  checkState();
+  await checkState();
 })();

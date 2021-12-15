@@ -1,4 +1,5 @@
 import coverImage from '../../images/default_image.jpg';
+import placeholderImage from '../../images/placeholder-img.png';
 import { refs } from '../refs';
 import { genresForLibrary, genresForModal } from '../getGenres';
 import axios from 'axios';
@@ -6,7 +7,8 @@ import { KEY, BASE_URL, LANGUAGE, SEARCH_BY_ID } from '../constants';
 
 export const renderLibraryMarkup = films => {
   if (!films.length) {
-    refs.container.innerHTML = '';
+    refs.container.innerHTML = `<img src="${placeholderImage}" style="width:auto;height:auto;display:block;margin-left:auto;margin-right:auto;pointer-events:none;"  alt="Filmoteka">`;
+    // document.querySelector(".main").innerHTML = `<img src="${placeholderImage}" style="width:500px;height:600px;display:block;  alt="Filmoteka">`
     return;
   }
   films.map(({ id }) => {

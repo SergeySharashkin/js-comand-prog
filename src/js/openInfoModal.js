@@ -10,6 +10,8 @@ let currentData = {};
 let savedFilms = [];
 let watchedFilms = [];
 
+
+
 export function openInfoModal(e) {
   console.log(e)
   refs.modal.classList.add('is-shown');
@@ -56,7 +58,7 @@ export function openInfoModal(e) {
      <h2 class="card-title">${alt}</h2>
   <ul class="modal__list">
       <li class="modal__list-item">
-       <p class="modal__text">Vote / Votes</p><span><span class="rating-span">${rating}</span>/<span>${count}</span></span>
+       <p class="modal__text">Vote / Votes</p><span><span class="rating-span">${rating}</span>/<span class="rating-count">${count}</span></span>
       </li>
       <li class="modal__list-item">
         <p class="modal__text">Popularity</p><span class="modal__list-item_value">${popularity}</span>

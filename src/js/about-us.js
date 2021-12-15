@@ -118,14 +118,13 @@
     cssMode: false,
   });
 
-const swiperActiv = document.getElementById('#ds');
+const swiperActiv = document.querySelector(".swiper");
 const footerLink = document.querySelector(".footer__link");
 
-// footerLink.addEventListener('onclick', (swiperActiv.style.display = 'none'));
+footerLink.addEventListener('click', goSwipe);
 
 function goSwipe() { 
   swiperActiv.style.display = 'block';
-
 }
 
 // const swiper = document.querySelector('.swiper').swiper;

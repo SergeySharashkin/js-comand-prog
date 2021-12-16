@@ -11,6 +11,11 @@ body {
   color: $black-color;
   font-family: $font;
   letter-spacing: 0.03em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+  min-height: 100vh;
 }
 h1,
 h2,

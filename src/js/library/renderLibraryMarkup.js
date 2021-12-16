@@ -1,4 +1,5 @@
 import coverImage from '../../images/default_image.jpg';
+import placeholderImage from '../../images/placeholder-img.png';
 import { refs } from '../refs';
 import { genresForLibrary, genresForModal } from '../getGenres';
 import axios from 'axios';
@@ -11,7 +12,12 @@ const {
 
 export const renderLibraryMarkup = films => {
   if (!films.length) {
-    refs.container.innerHTML = '';
+    refs.container.innerHTML = `<div style="position:relative;display: flex;justify-content:center;"><img src="${placeholderImage}" 
+    style="width:auto;height:auto;display:block;margin-left:auto;margin-right:auto;pointer-events:none;"  alt="Filmoteka">
+    <div style="position:absolute;top: 29%;left: 20%;text-align:center;position: absolute;
+    top: 27%;width: 58%;height: auto;display: flex;justify-content: center;
+    text-align: center;">
+    <p style="color:#CCCCCC;">${emptyLib}</p></div></div>`;
     Notify.info(emptyLib);
     return;
   }

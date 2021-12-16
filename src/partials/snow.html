@@ -3,26 +3,8 @@
     ////////////////////////
 
     // количество снежинок, которое будет на экране одновременно.
-    
-    const bodyThemWhite = document.querySelector(".light");
-    const bodyThemBlack = document.querySelector(".dark");
-    const switchThem = document.getElementById("switch");
-    console.log(switchThem);
-    console.log(bodyThemWhite);
-    console.log(bodyThemBlack);
 
-    switchThem.addEventListener('click', () => {
-        let snowmax = 40;
-
-    })
-    function goSnow(){
-        if(bodyThemBlack == null){
-            let snowmax = 0;
-        }
-        return snowmax = 40;
-    }
-
-    // let snowmax = 40;
+    let snowmax = 40;
 
     // Цвета для снежинок. Для каждой конкретной снежинки цвет выбирается случайно из этого массива.
     let snowcolor = new Array("#b9dff5", "#7fc7ff", "#7fb1ff", "#7fc7ff", "#b9dff5")
@@ -109,4 +91,5 @@
     for (i = 0; i <= snowmax; i++) {
         document.body.insertAdjacentHTML('beforeend', "<span id='s" + i + "' style='user-select:none;position:fixed;top:-" + snowmaxsize + "'>" + snowletter + "</span>")
     }
-    window.onload = initsnow</script>
+    window.onload = initsnow
+    </script>

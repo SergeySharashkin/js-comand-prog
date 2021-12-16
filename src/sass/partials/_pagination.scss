@@ -14,7 +14,8 @@
   width: 40px !important;
   height: 40px !important;
   display: flex !important;
-  color: rgb(61, 61, 61) !important;
+  color: var(--text-color) !important;
+  
   vertical-align: middle;
   font-size: 15px !important;
   line-height: 1.5 !important;
@@ -25,9 +26,16 @@
     width: 30px !important;
     height: 30px !important;
   }
+
+  &:hover,
+  &:focus {
+    background-color: $orange-color !important;
+    color: $white-color !important;
+  }
+  
   &.tui-is-selected {
-    background-color: #FF6B08 !important;
-    color: #fff !important;
+    background-color: $orange-color !important;
+    color: $white-color !important;
   }
 
   @media screen and (max-width: 768px) {
@@ -38,7 +46,21 @@
     &.tui-prev,
     &.tui-next {
      margin: 0 !important;
-      gap: 5px;
+     gap: 5px;
+      
     }
   }
 }
+.dark .tui-ico-first,
+.tui-ico-prev,
+.tui-ico-ellip,
+.tui-ico-next,
+.tui-ico-last {
+  filter: invert(1);
+}
+
+
+
+
+
+

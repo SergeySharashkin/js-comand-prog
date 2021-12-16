@@ -37,8 +37,12 @@
 }
 
 iframe {
-  width: 700px;
-  height: 500px;
+  width: 260px;
+  height: 100%;
+  @media screen and (min-width: 768px) {
+    width: 700px;
+    height: 500px;
+  }
   @media screen and (min-width: 1200px) {
     max-width: 750px;
     height: 520px;
@@ -47,6 +51,7 @@ iframe {
 
 .close-trailer-btn {
   display: flex;
+  margin-left: auto;
   margin-bottom: 25px;
   border-radius: 5px;
 }

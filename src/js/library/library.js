@@ -1,7 +1,6 @@
 import { Notify } from 'notiflix';
 import { refs } from '../refs';
 import { onLibraryBtnClick } from './onLibraryBtnClick';
-import { pagination } from '../pagination';
 import { selectedLanguage } from '../MultiLanguage/languageState';
 const {
   watched,
@@ -28,6 +27,7 @@ refs.showQueueBtn.addEventListener('click', () => {
   onLibraryBtnClick('savedStorage');
   saveSessionState('savedPage');
 });
+
 
 export function showLib(active, reverse) {
   if (active.classList.contains('header__button--active')) {

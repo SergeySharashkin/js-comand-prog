@@ -4,7 +4,7 @@ import { refs } from './refs';
 import slowScroll from './slow-scroll';
 
 export function pagination({ totalItems, page }, onClickPagePagination) {
-
+  console.log(page);
   if (totalItems === null) {
     return;
   }
@@ -14,7 +14,7 @@ export function pagination({ totalItems, page }, onClickPagePagination) {
     itemsPerPage: 20,
     visiblePages: 5,
     centerAlign: true,
-    page: page,
+    page: Number(page),
   });
   instance.on('beforeMove', onClickPagePagination);
   slowScroll();

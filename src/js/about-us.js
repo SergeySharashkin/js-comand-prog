@@ -4,6 +4,7 @@ import Swiper, { Navigation, Pagination, Mousewheel } from 'swiper';
 const footerLink = document.querySelector('.footer__link');
 const swiperActiv = document.querySelector('.backdrop-swiper');
 const swiperFix = document.getElementById('swiper-fix');
+
 const swiperClose = document.querySelector('.js-swiper-close');
 const swiperPosition = document.querySelector('.swiper-position');
 
@@ -20,6 +21,7 @@ const swiper = new Swiper('.swiper', {
   spaceBetween: 4,
   slidesPerGroup: 1,
 });
+
 
 footerLink.addEventListener('click', () => {
   swiperActiv.style.display = 'block';

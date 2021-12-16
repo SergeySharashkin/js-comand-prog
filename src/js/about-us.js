@@ -15,9 +15,6 @@ const swiperPosition = document.querySelector(".swiper-position");
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-    mousewheel: {b
-      invert: true,
-    },
     slidesPerView: 1,
     spaceBetween: 4,
     slidesPerGroup: 1,

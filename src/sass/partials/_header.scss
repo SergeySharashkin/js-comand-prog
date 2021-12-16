@@ -24,14 +24,6 @@
 .header__links-container {
   display: flex;
   align-items: center;
-  // max-width: 320px;
-  // //   background-color: green;
-  //   @media screen and (min-width: 768px) {
-  //     max-width: 768px;
-  //   }
-  //   @media screen and (min-width: 1024px) {
-  //     max-width: 1024px;
-  // }
 }
 .header__links {
   display: flex;
@@ -44,10 +36,7 @@
     display: flex;
     align-items: center;
   }
-  // @media screen and (min-width: 1024px) {
-  //   padding: 0 71px;
-  //   max-width: 1024px;
-  // }
+
 }
 .logo__text {
   font-family: Roboto;
@@ -77,13 +66,9 @@
   bottom: 10px;
   left: 0;
   height: 3px;
-  // border: 1px solid #000000;
   width: 100%;
   bottom: -3px;
   background-color: #ff6b08;
-  // @media screen and (min-width:768px) {
-  //   border: none;
-  // }
 }
 .header__home-link {
   margin-right: 39px;
@@ -154,8 +139,6 @@
 .header--my-library {
   background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
     url('../images/header-image-my-library.jpg');
-  //   display: flex;
-  //   flex-direction: column;
   @media screen and (min-width: 768px) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url('../images/header-image-my-library-tablet.jpg');

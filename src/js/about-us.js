@@ -29,6 +29,7 @@ footerLink.addEventListener('click', ()=>{
 swiperClose.addEventListener('click', ()=>{
   swiperActiv.style.display = 'none';
   swiperFix.classList.remove('swiper-fix');
+  
 });
 
 document.addEventListener('keydown', function (e) {

@@ -1,44 +1,77 @@
-.js-modal-about-us {
-  display: inline;
-  width: 1000px;
-  height: 400px;
-  position: absolute;
-  margin-left: 200px;
-  padding: 20px 20px 20px 20px;
-  box-shadow: 3px 3px red, -1em 0 0.4em olive;
-  text-align: center;
+.backdrop-swiper{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba( 255, 0, 0, 0);
+  z-index: 110;
 }
 
-.about-us__visible {
-  display: none;
-  flex-direction: column;
-  width: inherit;
-  height: 400px;
+.swiper-fix {
+  overflow: hidden;
+}
+
+.swiper-position {
+  width: 900px;
+  height: 350px;
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  margin: auto;
+  z-index: 2;
+  // background-color: transparent;
+  border-radius: 30px;
+  box-shadow: 2px 12px 183px 200px rgba(46, 39, 39, 1);
+  -webkit-box-shadow: 2px 12px 183px 200px rgba(46, 39, 39, 1);
+  -moz-box-shadow: 2px 12px 183px 200px rgba(46, 39, 39, 1);
+}
+
+.swiper-active {
+  display: block !important;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  position: static;
 }
 
 .member-photo {
+  border-radius: 600px;
+  position: relative;
   width: 200px;
-  height: 250px;
-  border-radius: 50%;
+  height: 200px;
 }
 
-.member-photo__position {
-  // margin-left: -200px;
-  display: flex;
+.swiper-background {
+  background-color: rgba($color: #e4dcdcf8, $alpha: 1);
 }
 
-.info-about-member {
-  padding-left: 60px;
+.swiper-background h2 {
   text-align: center;
-  width: 100%;
-  font-size: 25px;
+  font-size: 35px;
+  padding-top: 20px;
 }
 
-.info-about-member h2 {
-  color: lightcoral;
+.member-info-position {
+  display: flex;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-left: 100px;
+}
+
+.member-info-position h3 {
+  padding-left: 50px;
+  font-size: 25px;
+  width: 550px;
 }
 
 .info-about-member-work {
+  position: relative;
+  top: 40px;
+  right: 235px;
+  width: 650px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -48,15 +81,17 @@
   list-style-type: disc !important;
 }
 
-.about-us__position {
-  // display: flex;
-  // flex-direction: row;
-  padding-top: 20px;
-}
+// .swiper-anime {
+//   transform: translateY (10%);
+//   animation: ani 1s forwards;
+// }
 
-.our-team {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 45px;
-}
+// @keyframes ani {
+//   0% {
+//     transform: translateX(0%);
+//   }
+//   100% {
+//     transform: translateY(-150%);
+//   }
+// }
+

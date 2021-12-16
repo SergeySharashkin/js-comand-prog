@@ -5,5 +5,4 @@ export function getSelectedLanguage() {
     localStorage.setItem('language', JSON.stringify('ru'));
   }
   refs.languageSelect.value = JSON.parse(localStorage.getItem('language'));
-  console.log(refs.languageSelect.value);
 }

@@ -2,12 +2,12 @@
 .main {
   padding-top: 60px;
   padding-bottom: 50px;
-  background-color: var(--main-background-color);
   transition: var(--transition-delay);
 }
 main {
   flex-grow: 1;
   flex-shrink: 1;
+  background-color: var(--main-background-color);
 }
 // =============== Film-cards-styles =============//
 

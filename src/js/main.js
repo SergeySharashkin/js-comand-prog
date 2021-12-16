@@ -17,7 +17,7 @@ import './Trailer/onTrailerBtnClick';
 import './library/library';
 import './toggle-theme';
 const { notifies } = selectedLanguage;
-// import './snow';
+import './about-us';
 
 getRelevantGenresIds();
 getSelectedLanguage();
@@ -32,7 +32,6 @@ async function onHomePageHandler(e) {
 
 refs.homeLink.addEventListener('click', onHomePageHandler);
 refs.homeLogo.addEventListener('click', onHomePageHandler);
-// refs.languageSelect.addEventListener('change', location.reload());
 
 refs.form.addEventListener('submit', async e => {
   e.preventDefault();
@@ -45,18 +44,6 @@ refs.form.addEventListener('submit', async e => {
   sessionStorage.setItem('query', searchValue);
   buildMarkup(await fetchFilms({ query: searchValue, type: SEARCH__MOVIE }));
 });
-
-// function modalIsOpen() {
-//
-//   e.preventDefault();
-//   if (e.target.nodeName !== 'IMG') {
-//     return;
-//   }
-//   const filmId = e.target.dataset.id;
-//   openInfoModal(e);
-// }
-
-
 
 refs.container.addEventListener('click', e => {
 

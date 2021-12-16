@@ -4,7 +4,6 @@ import { refs } from './refs';
 import slowScroll from './slow-scroll';
 
 export function pagination({ totalItems, page }, onClickPagePagination) {
-
   if (totalItems === null) {
     return;
   }
@@ -14,15 +13,13 @@ export function pagination({ totalItems, page }, onClickPagePagination) {
     itemsPerPage: 20,
     visiblePages: 5,
     centerAlign: true,
-    page: page,
+    page: Number(page),
   });
   instance.on('beforeMove', onClickPagePagination);
   slowScroll();
-  if (refs.container.children.length < 20) {
-    console.log(refs.container.children.length);
+  if (totalItems <= 20) {
     refs.tuiContainer.style.display = 'none';
   } else {
     refs.tuiContainer.style.display = 'flex';
   }
 }
-

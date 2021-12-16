@@ -24,6 +24,7 @@ export const fetchFilms = async ({ query = '', page = 1, type = POPULAR_FILM_FET
 
     if(response.data.results.length === 0) {
       sessionStorage.clear();
+      clearQueryString();
       type = POPULAR_FILM_FETCH;
       const response = await axios.get(
         `${BASE_URL}${type}?api_key=${KEY}&page=${page}&language=${LANGUAGE}&query=${queryString}`,

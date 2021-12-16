@@ -16,13 +16,13 @@ export function pagination({ totalItems, page }, onClickPagePagination) {
     centerAlign: true,
     page: page,
   });
-  instance.on('afterMove', onClickPagePagination);
+  instance.on('beforeMove', onClickPagePagination);
   slowScroll();
-  // if (refs.container.children.length < 20) {
-  //   console.log(refs.container.children.length);
-  //   refs.tuiContainer.style.display = 'none';
-  // } else {
-  //   refs.tuiContainer.style.display = 'flex';
-  // }
+  if (totalItems <= 20) {
+    console.log(refs.container.children.length);
+    refs.tuiContainer.style.display = 'none';
+  } else {
+    refs.tuiContainer.style.display = 'flex';
+  }
 }
 

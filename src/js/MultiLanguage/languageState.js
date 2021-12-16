@@ -77,7 +77,7 @@ const languages = [
     library: 'Моя біблиотека',
     placeholder: 'Пошук фільмів',
     langTitle: 'Назва',
-    langOriginal: 'Оригинільна назва',
+    langOriginal: 'Оригінальна назва',
     langPopularity: 'Популярність',
     langGenres: 'Жанри',
     langVote: 'Оцінка / Голосів',

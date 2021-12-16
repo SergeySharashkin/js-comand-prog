@@ -27,7 +27,6 @@ export const refs = {
   showWatchedBtn: document.querySelector('.show-watched-btn'),
   showQueueBtn: document.querySelector('.show-queue-btn'),
 
-  //pagination container
   tuiContainer: document.getElementById('tui-pagination-container'),
 
   filmCardLink: null,

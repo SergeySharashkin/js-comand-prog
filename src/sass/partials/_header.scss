@@ -64,7 +64,7 @@
 .header__home-link,
 .header__my-library-link {
   position: relative;
-
+  font-size: 12px;
   font-weight: 500;
   text-decoration: none;
   text-transform: uppercase;
@@ -79,7 +79,7 @@
   height: 3px;
   // border: 1px solid #000000;
   width: 100%;
-  bottom: 0;
+  bottom: -3px;
   background-color: #ff6b08;
   // @media screen and (min-width:768px) {
   //   border: none;
